@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ryan Charles — Agents IA et automatisations n8n en production</title>
-<meta name="description" content="Je conçois des agents IA qui tournent seuls en production : service client, SEO, publication sociale. Quatre agents en service, 115 nœuds n8n, et les garde-fous qui vont avec.">
+<meta name="description" content="Je conçois des agents IA qui tournent seuls en production : service client, SEO, publication sociale. Quatre agents en service, 115 nœuds n8n, chacun filmé et documenté.">
 <meta name="author" content="Ryan Charles">
 <meta property="og:title" content="Ryan Charles — Agents IA en production">
-<meta property="og:description" content="Quatre agents IA qui tournent seuls chez leurs clients. Service client, éditorial SEO, publication Facebook et Instagram. Avec les garde-fous qui permettent de les laisser tourner.">
+<meta property="og:description" content="Quatre agents IA qui tournent seuls chez leurs clients. Service client, éditorial SEO, publication Facebook et Instagram. Chaque agent est ouvert, filmé et documenté : flux réel, décisions réelles, chiffres réels.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:image" content="posters/agent-sav.jpg">
@@ -23,10 +23,9 @@
     <a class="logo" href="#top">ryan<b>ia</b></a>
     <nav>
       <a href="#cas">Les agents</a>
-      <a href="#garde-fous">Garde-fous</a>
       <a href="#methode">Méthode</a>
       <a href="#apropos">À propos</a>
-      <a class="cta" href="#contact">Travailler ensemble</a>
+      <button class="cta" type="button" data-rappel>Travailler ensemble</button>
     </nav>
   </div>
 </header>
@@ -129,7 +128,6 @@
       <span class="tag">Agent + outils</span><span class="tag">Sous-workflows</span>
       <span class="tag">Suivi transporteur</span><span class="tag">Order Edit</span>
     </div>
-    <a class="backtop" href="#top">↑ Revenir au sommaire des agents</a>
   </article>
 
   <!-- ─── 02 ─── -->
@@ -190,7 +188,6 @@
       <span class="tag">Sortie JSON stricte</span><span class="tag">JSON-LD</span>
       <span class="tag">Maillage interne</span><span class="tag">gpt-image-2</span>
     </div>
-    <a class="backtop" href="#top">↑ Revenir au sommaire des agents</a>
   </article>
 
   <!-- ─── 03 ─── -->
@@ -251,7 +248,6 @@
       <span class="tag">Extraction web</span><span class="tag">Table d’état n8n</span>
       <span class="tag">Rotation de contenu</span><span class="tag">gpt-image-2</span>
     </div>
-    <a class="backtop" href="#top">↑ Revenir au sommaire des agents</a>
   </article>
 
   <!-- ─── 04 ─── -->
@@ -312,45 +308,7 @@
       <span class="tag">gpt-image-2 · edits</span><span class="tag">Cloudinary</span>
       <span class="tag">Human-in-the-loop</span><span class="tag">Table d’état n8n</span>
     </div>
-    <a class="backtop" href="#top">↑ Revenir au sommaire des agents</a>
   </article>
-</section>
-
-<!-- ══════════ GARDE-FOUS ══════════ -->
-<section id="garde-fous">
-  <div class="wrap">
-    <div class="shead rv">
-      <h2>Ce qu’un agent<br>doit refuser de faire</h2>
-      <div class="idx">Les garde-fous</div>
-    </div>
-    <p class="intro rv">La partie difficile n’est jamais de faire fonctionner l’agent. C’est de garantir qu’il ne fera pas de dégât le jour où le cas est bizarre. Voici les règles qui tournent réellement dans les scénarios ci-dessus.</p>
-
-    <div class="rules">
-      <div class="rule-c rv"><div class="n">01</div>
-        <h4>En cas de doute, ne rien faire</h4>
-        <p>Litige, menace, chargeback, ou simple incertitude sur la marche à suivre : l’agent <b>n’envoie rien, n’archive rien, ne marque rien comme lu</b>. Le message reste non lu, visible, en attente d’un humain. Cette règle prime sur toutes les autres.</p></div>
-
-      <div class="rule-c rv"><div class="n">02</div>
-        <h4>Jamais deux fois la même réponse</h4>
-        <p>Avant tout envoi, l’agent relit les <b>six derniers échanges sur trente jours</b>, dans les deux sens, corbeille comprise. Si sa réponse redit ce qu’on a déjà écrit — même avec une date différente — il n’envoie pas.</p></div>
-
-      <div class="rule-c rv"><div class="n">03</div>
-        <h4>Lire et écrire ne se mélangent pas</h4>
-        <p>Toutes les recherches dans la boutique passent par un <b>routeur en lecture seule</b> : commande par numéro, recherche client, commande par identifiant, transactions. Aucun mouvement d’argent n’est atteignable depuis cet outil.</p></div>
-
-      <div class="rule-c rv"><div class="n">04</div>
-        <h4>Pas de remboursement sur un calcul partiel</h4>
-        <p>Quand l’agent modifie une commande, il vérifie que <b>chaque ligne a bien été appliquée</b> avant de valider. Si une seule échoue, la validation est bloquée : on ne rembourse jamais un montant calculé sur une modification incomplète.</p></div>
-
-      <div class="rule-c rv"><div class="n">05</div>
-        <h4>Ne rien publier plutôt qu’un doublon</h4>
-        <p>Un sujet trop proche d’un article existant n’est pas publié. Le seuil n’est pas une intuition : il a été <b>calibré sur le corpus réel</b>, 8 doublons connus sur 8 détectés, aucun faux positif. La ligne est tracée avec son score.</p></div>
-
-      <div class="rule-c rv"><div class="n">06</div>
-        <h4>L’état ne vit pas dans le workflow</h4>
-        <p>Ce qui a déjà été publié est stocké dans une <b>table dédiée</b>, pas dans la mémoire du scénario. Un ré-import, une migration, une restauration : la mémoire survit. Sinon, un jour, la page republie tout depuis le début.</p></div>
-    </div>
-  </div>
 </section>
 
 <!-- ══════════ MÉTHODE ══════════ -->
@@ -412,8 +370,8 @@
     <h2 class="rv" style="margin-top:20px">Dites-moi ce qui vous prend le plus de temps chaque semaine.</h2>
     <p class="sub rv">Peu importe votre secteur et vos outils : si c’est répétitif, écrit quelque part et fait à heure fixe, ça s’automatise. Un appel de vingt minutes suffit pour savoir si c’est faisable — et surtout si ça vaut le coup. Si la réponse est non, je vous le dirai.</p>
     <div class="links rv">
-      <a class="btn solid" href="mailto:ryan.charles1@hotmail.com">ryan.charles1@hotmail.com</a>
-      <a class="btn" href="https://www.malt.fr/profile/ryancharles" target="_blank" rel="noopener">Profil Malt</a>
+      <button class="btn solid" type="button" data-rappel>Être recontacté</button>
+      <a class="btn" href="mailto:ryan.charles1@hotmail.com">Envoyer un mail</a>
     </div>
    </div>
    <aside class="panel rv">
@@ -423,12 +381,46 @@
      <div class="pr"><span class="a">Publication sociale</span><span class="b">facebook · instagram</span></div>
      <div class="pr"><span class="a">Qualification et relance de leads</span><span class="b">immobilier</span></div>
      <div class="pr"><span class="a">Synchronisation d’outils</span><span class="b">apis · crm · sheets</span></div>
-     <div class="pr"><span class="a" style="color:var(--signal)">Autre chose — décrivez, on regarde</span><span class="b">le plus fréquent</span></div>
+     <button class="pr trig" type="button" data-rappel><span class="a">Autre chose — décrivez, on regarde</span><span class="b">le plus fréquent</span></button>
      <div class="pfoot">Ces exemples viennent de projets réels, pas d’un catalogue. Si une tâche se répète chez vous, elle s’automatise — quel que soit votre métier ou vos outils.</div>
    </aside>
   </div>
 </section>
 </main>
+
+
+<!-- ══════════ FORMULAIRE DE RAPPEL ══════════ -->
+<dialog id="rappel" aria-labelledby="rappelTitre">
+  <div class="dlgIn">
+    <button class="dlgX" type="button" data-close aria-label="Fermer">&times;</button>
+    <div class="eyebrow">Prise de contact</div>
+    <h3 id="rappelTitre">Dites-moi où vous joindre</h3>
+    <p class="dlgLede">Je vous recontacte sous 48&nbsp;h pour comprendre ce qui vous prend du temps. Pas de présentation commerciale : on regarde si c’est automatisable, et si ça n’en vaut pas la peine, je vous le dis.</p>
+
+    <form class="dlgForm" action="https://formsubmit.co/ryan.charles1@hotmail.com" method="POST">
+      <input type="hidden" name="_subject" value="ryania.fr — demande de rappel">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://ryania.fr/merci.html">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="fRow">
+        <label>Prénom<input type="text" name="Prénom" required autocomplete="given-name"></label>
+        <label>Nom<input type="text" name="Nom" required autocomplete="family-name"></label>
+      </div>
+      <div class="fRow">
+        <label>E-mail<input type="email" name="E-mail" required autocomplete="email" inputmode="email"></label>
+        <label>Téléphone<input type="tel" name="Téléphone" required autocomplete="tel" inputmode="tel"></label>
+      </div>
+      <label class="full">Ce qui vous prend du temps <span>facultatif</span>
+        <textarea name="Message" rows="3" placeholder="Ex. : je réponds moi-même à trente e-mails de suivi de commande par semaine."></textarea>
+      </label>
+
+      <button class="btn solid full" type="submit">Envoyer mes coordonnées</button>
+      <p class="dlgNote">Vos coordonnées servent uniquement à vous recontacter. Aucune liste de diffusion, aucun envoi automatique.</p>
+    </form>
+  </div>
+</dialog>
 
 <a id="totop" href="#top" aria-label="Revenir en haut">↑ Sommaire</a>
 

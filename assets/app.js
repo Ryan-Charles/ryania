@@ -85,7 +85,7 @@
       var v = p.querySelector('video');
       if (!v) {
         v = document.createElement('video');
-        v.src = p.dataset.src;
+        v.src = p.dataset.src || (window.__VID && window.__VID[p.dataset.key]) || '';
         v.controls = true;
         v.playsInline = true;
         v.preload = 'auto';
@@ -116,6 +116,30 @@
       });
     }, { threshold: 0.6 });
     nums.forEach(function (n) { io2.observe(n); });
+  }
+
+  /* ── formulaire de rappel ──────────────────────────────────────────── */
+  var dlg = document.getElementById('rappel');
+  if (dlg) {
+    [].slice.call(document.querySelectorAll('[data-rappel]')).forEach(function (b) {
+      b.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (dlg.showModal) { dlg.showModal(); } else { dlg.setAttribute('open', ''); }
+        var f = dlg.querySelector('input[name="Prénom"]');
+        if (f) setTimeout(function () { f.focus(); }, 60);
+      });
+    });
+    dlg.querySelector('[data-close]').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  }
+
+  /* ── pastille « revenir au sommaire » ──────────────────────────────── */
+  var toTop = document.getElementById('totop');
+  var hero = document.querySelector('.ticker');
+  if (toTop && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      toTop.classList.toggle('on', !en[0].isIntersecting && en[0].boundingClientRect.top < 0);
+    }, { threshold: 0 }).observe(hero);
   }
 
   document.getElementById('yr').textContent = new Date().getFullYear();
