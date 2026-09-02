@@ -1,0 +1,138 @@
+{
+ "num": "02",
+ "bar": "Acose — agent éditorial SEO",
+ "name": "L’agent qui écrit<br>et publie le blog",
+ "sub": "Deux articles par semaine sur la boutique : maillage interne, métadonnées, données structurées, illustration. Personne ne touche au clavier.",
+ "chips": [
+  "Acose · e-commerce",
+  "17 nœuds",
+  "Lundi + jeudi, 4 h"
+ ],
+ "problem": {
+  "eyebrow": "Avant",
+  "text": "Un silo SEO ne se joue pas au premier article. Il se joue au cinquantième : doublons, cannibalisation, pages orphelines.",
+  "metrics": [
+   {
+    "v": "2/sem",
+    "k": "cadence à tenir"
+   },
+   {
+    "v": "~50",
+    "k": "articles déjà en ligne"
+   },
+   {
+    "v": "0",
+    "k": "doublon toléré"
+   }
+  ]
+ },
+ "steps": [
+  {
+   "kind": "Déclencheur",
+   "node": "Schedule",
+   "title": "Lundi et jeudi, 4 h du matin",
+   "sub": "Deux créneaux fixes. La cadence ne dépend plus de la motivation de personne.",
+   "data": "cron 0 4 * * MON · 0 4 * * THU"
+  },
+  {
+   "kind": "File",
+   "node": "Google Sheets",
+   "title": "Il prend le prochain sujet de la file",
+   "sub": "Une ligne au statut « à publier », avec son mot-clé, son cluster et son intention de recherche.",
+   "data": "sujet : « cafards dans les placards de cuisine » · intention <b>MOFU</b>"
+  },
+  {
+   "kind": "Contexte",
+   "node": "Shopify Articles",
+   "title": "Il charge tout ce qui est déjà publié",
+   "sub": "Titres, handles et tags de l’intégralité du blog, à chaque exécution.",
+   "data": "49 articles chargés"
+  },
+  {
+   "kind": "Garde-fou",
+   "node": "Anti-doublon",
+   "title": "Il compare le sujet à l’existant, par le sens",
+   "sub": "Similarité Jaccard + couverture du mot-clé, calibrée sur les articles réellement publiés : 8 doublons connus sur 8 détectés, aucun faux positif.",
+   "data": "score 0,31 · seuil 0,62 → <b>sujet validé</b>"
+  },
+  {
+   "kind": "Maillage",
+   "node": "Sélection des liens",
+   "title": "Il choisit les articles à citer",
+   "sub": "Les plus proches sémantiquement, sans jamais reprendre le pilier ni un quasi-doublon.",
+   "data": "4 liens internes retenus · pilier : « se débarrasser des cafards »"
+  },
+  {
+   "kind": "Rédaction",
+   "node": "GPT · JSON strict",
+   "title": "Il rédige sous douze règles éditoriales",
+   "sub": "Longueur pilotée par l’intention, aucun chiffre hors fiche produit, aucune marque concurrente, sortie en schéma JSON strict.",
+   "data": "1 420 mots · FAQ 4 questions · seo_title 58 caractères"
+  },
+  {
+   "kind": "Contrôle",
+   "node": "Assemblage",
+   "title": "Il corrige ce que le modèle fait mal",
+   "sub": "H1 en trop supprimés, handle rendu unique, URL produit transformée en vrai lien, phrases d’assistant effacées. Puis JSON-LD Article, FAQPage et BreadcrumbList.",
+   "data": "1 H1 retiré · handle unique · <b>3 blocs de données structurées</b>"
+  },
+  {
+   "kind": "Visuel",
+   "node": "gpt-image-2",
+   "title": "Il produit l’illustration",
+   "sub": "Photographie réaliste, intérieur français, lumière naturelle. Aucun texte, aucun logo, aucune personne identifiable.",
+   "data": "1536 × 1024 · attachée à l’article"
+  },
+  {
+   "kind": "Publication",
+   "node": "Shopify",
+   "title": "L’article part en ligne",
+   "sub": "Puis les vraies balises SEO sont écrites dans les métafields, pas seulement dans le corps de page.",
+   "data": "publié · <b>global.title_tag</b> + <b>global.description_tag</b>"
+  },
+  {
+   "kind": "Indexation",
+   "node": "Page pilier",
+   "title": "Il accroche l’article à la page la plus crawlée",
+   "sub": "Le lien est injecté dans le hub du pilier. C’est le principal levier de découverte par Google, et la ligne est ensuite consignée dans le journal.",
+   "data": "pilier mis à jour · <b>+1 lien entrant</b> · journal complété"
+  }
+ ],
+ "result": {
+  "text": "Le silo grandit tout seul, sans doublon et sans page orpheline.",
+  "metrics": [
+   {
+    "v": "~45 s",
+    "k": "pour un article complet"
+   },
+   {
+    "v": "2/sem",
+    "k": "sans interruption"
+   },
+   {
+    "v": "0",
+    "k": "intervention humaine"
+   }
+  ],
+  "line": "Si le sujet ressemble trop à un article déjà en ligne, rien n’est publié : la ligne est marquée « doublon ignoré », avec le score et l’article en cause. Mieux vaut ne rien publier qu’ajouter une page qui cannibalise."
+ },
+ "t": {
+  "title": [
+   0,
+   3.4
+  ],
+  "prob": [
+   3.4,
+   8.2
+  ],
+  "flow": [
+   8.2,
+   38.2
+  ],
+  "end": [
+   38.2,
+   45.800000000000004
+  ]
+ },
+ "duration": 45.8
+}

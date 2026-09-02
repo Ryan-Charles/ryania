@@ -1,0 +1,6 @@
+{
+  "name": "ryania",
+  "private": true,
+  "description": "ryania.fr — site portfolio agents IA & automatisations n8n",
+  "devDependencies": { "playwright": "^1.49.1" }
+}

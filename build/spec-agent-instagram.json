@@ -1,0 +1,131 @@
+{
+ "num": "04",
+ "bar": "SOS Thierry — Guyane · Instagram",
+ "name": "L’agent qui prépare<br>les posts Instagram",
+ "sub": "Il regarde les photos de chantier, choisit, retouche si nécessaire, écrit la légende et dépose le brouillon dans Notion. Le client valide et publie.",
+ "chips": [
+  "Travaux publics · Guyane",
+  "27 nœuds",
+  "Lot hebdomadaire"
+ ],
+ "problem": {
+  "eyebrow": "Avant",
+  "text": "Une entreprise de terrassement a des centaines de photos de chantier dans un téléphone, et aucune minute pour en faire du contenu.",
+  "metrics": [
+   {
+    "v": "5",
+    "k": "piliers éditoriaux à couvrir"
+   },
+   {
+    "v": "0",
+    "k": "temps disponible"
+   },
+   {
+    "v": "1",
+    "k": "compte qui ne bouge pas"
+   }
+  ]
+ },
+ "steps": [
+  {
+   "kind": "Déclencheur",
+   "node": "Schedule",
+   "title": "Lundi, minuit : la semaine se prépare",
+   "sub": "Un lot complet est produit d’un coup, pas un post à la fois.",
+   "data": "lot hebdomadaire"
+  },
+  {
+   "kind": "Source",
+   "node": "Notion",
+   "title": "Il ouvre la banque de photos du client",
+   "sub": "Les vraies photos de chantier, déposées par l’entreprise au fil des interventions.",
+   "data": "content bank Notion"
+  },
+  {
+   "kind": "Vision",
+   "node": "GPT vision",
+   "title": "Il regarde vraiment chaque photo",
+   "sub": "Le modèle décrit la scène, identifie le matériel et dit si l’image est exploitable telle quelle.",
+   "data": "mini-pelle · tranchée · végétation dense · <b>à compléter : oui</b>"
+  },
+  {
+   "kind": "Éditorial",
+   "node": "Rotation piliers",
+   "title": "Il choisit le pilier de la semaine",
+   "sub": "Mini-pelle avec chauffeur, déboisement, tranchées et réseaux, préparation de terrain, clôture.",
+   "data": "pilier retenu : <b>tranchées et réseaux</b>"
+  },
+  {
+   "kind": "Rédaction",
+   "node": "Agent",
+   "title": "Il écrit la légende",
+   "sub": "Le vocabulaire du métier, pas celui d’une agence. Une intervention concrète, un bénéfice clair, un appel à contacter.",
+   "data": "légende prête à copier"
+  },
+  {
+   "kind": "Visuel",
+   "node": "Trois voies",
+   "title": "Photo brute, photo retouchée ou image générée",
+   "sub": "La photo du client passe en priorité. Retouche seulement si la vision l’a jugée incomplète. Génération en dernier recours.",
+   "data": "voie retenue : <b>photo du client, retouchée une fois</b>"
+  },
+  {
+   "kind": "Formatage",
+   "node": "Cloudinary",
+   "title": "Il recadre au format du fil",
+   "sub": "Cadrage automatique sur le sujet, ratio Instagram, qualité optimisée.",
+   "data": "ratio 4:5 · recadrage sur le sujet détecté"
+  },
+  {
+   "kind": "Livraison",
+   "node": "Notion",
+   "title": "Le brouillon atterrit chez le client",
+   "sub": "Statut « brouillon prêt », légende copiable, image finale. Rien n’est publié sans lui.",
+   "data": "page créée · statut <b>Brouillon prêt</b>"
+  },
+  {
+   "kind": "Journal",
+   "node": "Table n8n",
+   "title": "Il consigne ce qui a été préparé",
+   "sub": "Thème, titre, légende, image et créneau prévu — pour ne jamais repasser deux fois sur le même angle.",
+   "data": "lot enregistré"
+  }
+ ],
+ "result": {
+  "text": "Le client ouvre Notion le lundi et trouve sa semaine de contenu prête, faite avec ses vraies photos de chantier.",
+  "metrics": [
+   {
+    "v": "1 lot",
+    "k": "préparé chaque semaine"
+   },
+   {
+    "v": "0",
+    "k": "publication sans validation"
+   },
+   {
+    "v": "5",
+    "k": "piliers en rotation"
+   }
+  ],
+  "line": "C’est un agent volontairement bridé : il prépare, il ne publie pas. Sur le compte d’une entreprise de métier, la validation humaine vaut mieux qu’une cadence parfaite."
+ },
+ "t": {
+  "title": [
+   0,
+   3.4
+  ],
+  "prob": [
+   3.4,
+   8.2
+  ],
+  "flow": [
+   8.2,
+   35.2
+  ],
+  "end": [
+   35.2,
+   42.800000000000004
+  ]
+ },
+ "duration": 42.8
+}

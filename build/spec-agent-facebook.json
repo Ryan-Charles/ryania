@@ -1,0 +1,138 @@
+{
+ "num": "03",
+ "bar": "Agent immobilier indépendant — Martinique",
+ "name": "L’agent qui alimente<br>la page Facebook",
+ "sub": "Deux publications par semaine : un contenu pédagogique le mercredi, un bien réel le dimanche. Rien à préparer, rien à programmer.",
+ "chips": [
+  "Immobilier · Martinique",
+  "35 nœuds",
+  "2 créneaux / semaine"
+ ],
+ "problem": {
+  "eyebrow": "Avant",
+  "text": "Un agent immobilier qui publie régulièrement prend l’avantage. Sauf qu’entre deux visites, personne n’ouvre Canva le dimanche matin.",
+  "metrics": [
+   {
+    "v": "2/sem",
+    "k": "cadence attendue"
+   },
+   {
+    "v": "0 h",
+    "k": "disponible pour la produire"
+   },
+   {
+    "v": "1",
+    "k": "page qui s’éteint dès qu’on arrête"
+   }
+  ]
+ },
+ "steps": [
+  {
+   "kind": "Déclencheur",
+   "node": "Deux Schedule",
+   "title": "Mercredi 5 h, dimanche 10 h",
+   "sub": "Deux créneaux, deux formats radicalement différents dans le même scénario.",
+   "data": "mercredi → pédagogique · dimanche → annonce"
+  },
+  {
+   "kind": "Ciblage",
+   "node": "Semaine paire",
+   "title": "Une semaine sur deux, il change de public",
+   "sub": "Semaine paire : les acheteurs. Semaine impaire : les vendeurs. La page ne parle jamais à tout le monde en même temps.",
+   "data": "semaine 36 → <b>ACHETEURS</b>"
+  },
+  {
+   "kind": "Rédaction",
+   "node": "GPT",
+   "title": "Il écrit un post d’actualité immobilière",
+   "sub": "Marché France et Martinique, données de l’année en cours uniquement, jamais de markdown — Facebook ne l’interprète pas.",
+   "data": "5 points structurés · 8 hashtags · téléphone du conseiller"
+  },
+  {
+   "kind": "Visuel",
+   "node": "gpt-image-2",
+   "title": "Il génère l’illustration à la charte",
+   "sub": "Flat design, fond blanc, accent orange de l’enseigne.",
+   "data": "1024 × 1024 · <b>zéro texte dans l’image</b>"
+  },
+  {
+   "kind": "Source",
+   "node": "Page conseiller",
+   "title": "Le dimanche, il va chercher les biens réels",
+   "sub": "Il lit la page publique du conseiller et en extrait les annonces actuellement en ligne.",
+   "data": "7 annonces actives détectées"
+  },
+  {
+   "kind": "Mémoire",
+   "node": "Table n8n",
+   "title": "Il écarte ce qui a déjà été publié",
+   "sub": "La liste vit dans une table n8n, pas dans la mémoire du scénario : elle survit à un ré-import du workflow.",
+   "data": "5 biens déjà passés → <b>1 bien retenu</b>"
+  },
+  {
+   "kind": "Extraction",
+   "node": "Parsing fiche",
+   "title": "Il lit la fiche du bien",
+   "sub": "Titre, prix, ville, description — et seulement les photos dont l’URL porte l’identifiant du bien.",
+   "data": "9 photos · les « biens qui pourraient vous plaire » sont écartées"
+  },
+  {
+   "kind": "Rédaction",
+   "node": "GPT",
+   "title": "Il écrit l’annonce",
+   "sub": "Phrases courtes, cinq emojis maximum, numéro de téléphone systématique, jamais de WhatsApp.",
+   "data": "légende + hashtags prêts pour Facebook"
+  },
+  {
+   "kind": "Publication",
+   "node": "Graph API",
+   "title": "Le carrousel est publié",
+   "sub": "Chaque photo est envoyée sans être publiée, puis toutes sont rattachées au même post. Les échecs d’upload sont filtrés avant l’envoi.",
+   "data": "9 photos → <b>1 carrousel</b> · visite vidéo publiée si elle existe"
+  },
+  {
+   "kind": "Journal",
+   "node": "Table n8n",
+   "title": "Le bien est marqué comme posté",
+   "sub": "URL, identifiant du post Facebook, créneau et horodatage. Quand tous les biens sont passés, la rotation reprend au premier.",
+   "data": "enregistré · <b>0 bien publié deux fois</b>"
+  }
+ ],
+ "result": {
+  "text": "La page publie sans lui, avec ses biens réels et son numéro. Il reprend la main quand il veut.",
+  "metrics": [
+   {
+    "v": "2",
+    "k": "posts par semaine"
+   },
+   {
+    "v": "0",
+    "k": "bien publié deux fois"
+   },
+   {
+    "v": "35",
+    "k": "nœuds orchestrés"
+   }
+  ],
+  "line": "La difficulté n’était pas de publier sur Facebook. C’était de garantir qu’on ne republie jamais le même bien, même après un ré-import complet du scénario."
+ },
+ "t": {
+  "title": [
+   0,
+   3.4
+  ],
+  "prob": [
+   3.4,
+   8.2
+  ],
+  "flow": [
+   8.2,
+   38.2
+  ],
+  "end": [
+   38.2,
+   45.800000000000004
+  ]
+ },
+ "duration": 45.8
+}

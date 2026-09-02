@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ryan Charles — Agents IA et automatisations n8n en production</title>
+<meta name="description" content="Je conçois des agents IA qui tournent seuls en production : service client, SEO, publication sociale. Quatre agents en service, 115 nœuds n8n, et les garde-fous qui vont avec.">
+<meta name="author" content="Ryan Charles">
+<meta property="og:title" content="Ryan Charles — Agents IA en production">
+<meta property="og:description" content="Quatre agents IA qui tournent seuls chez leurs clients. Service client, éditorial SEO, publication Facebook et Instagram. Avec les garde-fous qui permettent de les laisser tourner.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="posters/agent-sav.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E4E6E1'/><text y='.9em' x='8' font-size='84' font-family='Georgia,serif' fill='%231B36C4'>R</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="rail"></div>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="#top">ryan<b>ia</b></a>
+    <nav>
+      <a href="#cas">Les agents</a>
+      <a href="#garde-fous">Garde-fous</a>
+      <a href="#methode">Méthode</a>
+      <a href="#apropos">À propos</a>
+      <a class="cta" href="#contact">Travailler ensemble</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<main id="top">
+<div class="hero wrap">
+  <div class="heroGrid">
+   <div>
+    <div class="eyebrow rv in">Ryan Charles · Martinique · agents IA &amp; automatisation n8n</div>
+    <h1 class="rv in">Je mets des agents IA <em>en production.</em> Pas des démos.</h1>
+    <p class="lede rv in">Quatre agents tournent en ce moment chez leurs clients : ils répondent aux e-mails du service client, écrivent et publient un blog, alimentent une page Facebook et préparent un compte Instagram. <strong>Sans personne derrière.</strong> Ci-dessous, chacun est ouvert et filmé — flux réel, décisions réelles, chiffres réels.</p>
+   </div>
+   <aside class="panel rv in">
+     <div class="phead">Instance n8n · en service</div>
+     <a class="pr" href="#cas" style="text-decoration:none"><span class="a">Service client Acose</span><span class="b">30 nœuds</span></a>
+     <a class="pr" href="#cas" style="text-decoration:none"><span class="a">Éditorial SEO Acose</span><span class="b">17 nœuds</span></a>
+     <a class="pr" href="#cas" style="text-decoration:none"><span class="a">Publication Facebook</span><span class="b">35 nœuds</span></a>
+     <a class="pr" href="#cas" style="text-decoration:none"><span class="a">Préparation Instagram</span><span class="b">27 nœuds</span></a>
+     <div class="pr"><span class="a" style="color:var(--muted);font-weight:400">Routeur lecture seule</span><span class="b">6 nœuds</span></div>
+     <div class="pfoot">Dernière exécution · 01/09 à 18:11</div>
+   </aside>
+  </div>
+
+  <div class="kpis rv in">
+    <div class="kpi"><div class="v">4</div><div class="k">agents en production</div></div>
+    <div class="kpi"><div class="v">115</div><div class="k">nœuds orchestrés</div></div>
+    <div class="kpi"><div class="v">58</div><div class="k">exécutions · 7 derniers jours</div></div>
+    <div class="kpi"><div class="v">0</div><div class="k">échec sur la période</div></div>
+  </div>
+</div>
+
+<div class="ticker rv in">
+  <div class="lbl">Journal d’exécution</div>
+  <div class="rail" id="tk"></div>
+</div>
+
+<!-- ══════════ CAS ══════════ -->
+<section id="cas" class="wrap">
+  <div class="shead rv">
+    <h2>Quatre agents,<br>quatre problèmes réels</h2>
+    <div class="idx">01 — 04</div>
+  </div>
+  <p class="intro rv">Aucun de ces scénarios n’a été construit pour une démonstration. Chacun est né d’un métier qui perdait du temps sur une tâche répétitive, et chacun tourne encore aujourd’hui. Les vidéos suivent le flux réel, étape par étape.</p>
+
+  <!-- ─── 01 ─── -->
+  <article class="case rv">
+    <div class="caseMeta">
+      <span class="num">N° 01</span><span>Acose · e-commerce</span><span>30 nœuds</span>
+      <span>Gmail · Shopify · GPT</span><span class="live">Actif</span>
+    </div>
+    <h3>L’agent qui répond au service client, sans relecture</h3>
+    <p class="oneline">Il lit l’e-mail, retrouve la commande, interroge le transporteur, écrit la réponse dans le ton de la marque et l’envoie. Puis il archive le fil.</p>
+
+    <div class="caseGrid">
+      <div>
+        <div class="player" data-src="videos/agent-sav.mp4">
+          <img class="poster" src="posters/agent-sav.jpg" alt="Flux d’exécution de l’agent service client Acose">
+          <button class="play" aria-label="Lire la démonstration">
+            <span><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg>Voir le flux · 43 s</span>
+          </button>
+        </div>
+        <div class="vcap"><span>Démonstration · flux réel</span><span>Sans son</span></div>
+      </div>
+      <div class="fiche">
+        <dl>
+          <div class="r"><dt>Déclencheur</dt><dd>Nouvel e-mail Gmail</dd></div>
+          <div class="r"><dt>Fréquence</dt><dd>À chaque message, 24 h/24</dd></div>
+          <div class="r"><dt>Périmètre</dt><dd>Suivi, annulation, remboursement, adresse, quantité, colis perdu</dd></div>
+          <div class="r"><dt>Outils de l’agent</dt><dd>9 outils, dont 2 sous-workflows</dd></div>
+          <div class="r"><dt>Écriture</dt><dd>Réponse HTML, modèles maison, signature fixe</dd></div>
+          <div class="r"><dt>Statut</dt><dd>En production depuis juin</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="body2">
+      <div>
+        <p>Une boutique qui vend en France reçoit tous les jours la même question : <strong>« où est mon colis ? »</strong>. Y répondre correctement demande d’ouvrir la boîte mail, retrouver la commande dans Shopify, aller lire le suivi chez le transporteur, puis réécrire à la main une réponse qu’on a déjà écrite cent fois.</p>
+        <p>L’agent fait exactement ce parcours. Il retrouve la commande, enregistre le numéro de suivi auprès du transporteur, attend le retour, lit le statut réel, choisit le bon scénario parmi une dizaine, rédige avec les modèles de la marque et envoie. Le tout en <strong>13 secondes</strong> pour un cas simple, deux minutes trente quand il doit interroger le transporteur.</p>
+        <p>Il ne se contente pas du suivi : il annule une commande, rembourse, change une adresse de livraison, modifie une quantité en cours de commande, ou traite un colis livré mais jamais reçu.</p>
+      </div>
+      <div>
+        <div class="hard">
+          <div class="t">La difficulté réelle</div>
+          <p>Un agent qui écrit à des clients à votre place peut faire deux dégâts : <strong>répondre deux fois la même chose</strong>, et <strong>répondre là où il fallait se taire</strong>.</p>
+          <p style="margin-top:14px">Avant chaque envoi, il relit les six derniers échanges avec ce client sur trente jours, dans les deux sens, corbeille comprise. Si sa réponse dit la même chose que la précédente — même si une date a changé — il n’envoie rien et laisse le message non lu.</p>
+          <p style="margin-top:14px">Et sur un litige, une menace, un chargeback, ou simplement un cas dont il n’est pas certain : aucune action. Ni réponse, ni archivage, ni marquage comme lu. Cette règle prime sur toutes les autres.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><div class="v">58</div><div class="k">exécutions en 7 jours</div></div>
+      <div><div class="v">0</div><div class="k">échec sur la période</div></div>
+      <div><div class="v">13 s</div><div class="k">réponse, cas simple</div></div>
+      <div><div class="v">0</div><div class="k">relecture avant envoi</div></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Gmail API</span><span class="tag">Shopify Admin API</span>
+      <span class="tag">Agent + outils</span><span class="tag">Sous-workflows</span>
+      <span class="tag">Suivi transporteur</span><span class="tag">Order Edit</span>
+    </div>
+  </article>
+
+  <!-- ─── 02 ─── -->
+  <article class="case rv">
+    <div class="caseMeta">
+      <span class="num">N° 02</span><span>Acose · e-commerce</span><span>17 nœuds</span>
+      <span>Shopify · Sheets · GPT</span><span class="live">Actif</span>
+    </div>
+    <h3>L’agent qui écrit le blog et l’indexe tout seul</h3>
+    <p class="oneline">Deux articles par semaine sur la boutique : rédaction, maillage interne, métadonnées, données structurées, illustration et mise en ligne. Personne ne touche au clavier.</p>
+
+    <div class="caseGrid">
+      <div>
+        <div class="player" data-src="videos/agent-seo.mp4">
+          <img class="poster" src="posters/agent-seo.jpg" alt="Flux d’exécution de l’agent éditorial SEO">
+          <button class="play" aria-label="Lire la démonstration">
+            <span><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg>Voir le flux · 46 s</span>
+          </button>
+        </div>
+        <div class="vcap"><span>Démonstration · flux réel</span><span>Sans son</span></div>
+      </div>
+      <div class="fiche">
+        <dl>
+          <div class="r"><dt>Déclencheur</dt><dd>Lundi et jeudi, 4 h</dd></div>
+          <div class="r"><dt>Cadence</dt><dd>2 articles par semaine</dd></div>
+          <div class="r"><dt>Corpus</dt><dd>~50 articles, un silo thématique</dd></div>
+          <div class="r"><dt>Sortie</dt><dd>Article, FAQ, JSON-LD, illustration, métafields</dd></div>
+          <div class="r"><dt>Durée</dt><dd>~45 s par article complet</dd></div>
+          <div class="r"><dt>Statut</dt><dd>En production depuis avril</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="body2">
+      <div>
+        <p>Écrire un article avec un modèle de langage, tout le monde sait le faire. Tenir un <strong>silo SEO cohérent sur cinquante articles</strong>, c’est un autre métier : il faut éviter de traiter deux fois le même sujet, relier chaque nouvelle page aux anciennes, écrire les vraies balises, produire les données structurées, et rattacher la page à un endroit que Google recrawle souvent.</p>
+        <p>Le scénario fait tout ça. Il prend le prochain sujet dans une file, charge l’intégralité des articles déjà publiés, vérifie qu’il n’est pas en train de se répéter, choisit les quatre articles à citer, rédige sous douze règles éditoriales en sortie JSON stricte, puis <strong>corrige lui-même ce que le modèle fait mal</strong> : titres H1 en trop, handles en doublon, URL produit collée en clair, phrases d’assistant en fin d’article.</p>
+        <p>Il génère l’illustration, publie sur Shopify, écrit les métafields SEO, puis <strong>injecte le lien dans la page pilier</strong> — la page la plus crawlée du silo. C’est ce dernier geste qui fait la différence sur la vitesse d’indexation.</p>
+      </div>
+      <div>
+        <div class="hard">
+          <div class="t">La difficulté réelle</div>
+          <p>La première version comparait les titres à l’identique. Deux sujets proches passaient au travers et le blog se retrouvait avec des <strong>paires d’articles qui se cannibalisaient</strong>.</p>
+          <p style="margin-top:14px">La détection actuelle compare par le sens : similarité de vocabulaire pondérée par la couverture du mot-clé cible, avec une liste de termes trop génériques pour prouver quoi que ce soit sur ce site. Deux seuils, un pour le doublon probable, un pour le doublon certain.</p>
+          <p style="margin-top:14px">Le calibrage a été mesuré sur les articles réellement publiés : <strong>8 doublons connus sur 8 détectés, aucun faux positif</strong>. Quand un doublon est détecté, rien n’est publié — la ligne est marquée avec le score et l’article en cause.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><div class="v">2/sem</div><div class="k">sans interruption</div></div>
+      <div><div class="v">~45 s</div><div class="k">par article complet</div></div>
+      <div><div class="v">8/8</div><div class="k">doublons détectés</div></div>
+      <div><div class="v">0</div><div class="k">faux positif</div></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Shopify Admin API</span><span class="tag">Google Sheets</span>
+      <span class="tag">Sortie JSON stricte</span><span class="tag">JSON-LD</span>
+      <span class="tag">Maillage interne</span><span class="tag">gpt-image-2</span>
+    </div>
+  </article>
+
+  <!-- ─── 03 ─── -->
+  <article class="case rv">
+    <div class="caseMeta">
+      <span class="num">N° 03</span><span>Immobilier · Martinique</span><span>35 nœuds</span>
+      <span>Meta Graph API · GPT</span><span class="live">Actif</span>
+    </div>
+    <h3>L’agent qui tient la page Facebook d’un agent immobilier</h3>
+    <p class="oneline">Un contenu pédagogique le mercredi, un bien réel le dimanche. Le conseiller n’a rien à préparer, rien à programmer, et aucun bien n’est publié deux fois.</p>
+
+    <div class="caseGrid">
+      <div>
+        <div class="player" data-src="videos/agent-facebook.mp4">
+          <img class="poster" src="posters/agent-facebook.jpg" alt="Flux d’exécution de l’agent de publication Facebook">
+          <button class="play" aria-label="Lire la démonstration">
+            <span><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg>Voir le flux · 46 s</span>
+          </button>
+        </div>
+        <div class="vcap"><span>Démonstration · flux réel</span><span>Sans son</span></div>
+      </div>
+      <div class="fiche">
+        <dl>
+          <div class="r"><dt>Déclencheurs</dt><dd>Mercredi 5 h · dimanche 10 h</dd></div>
+          <div class="r"><dt>Mercredi</dt><dd>Post pédagogique + illustration générée</dd></div>
+          <div class="r"><dt>Dimanche</dt><dd>Carrousel d’un bien réel + visite vidéo</dd></div>
+          <div class="r"><dt>Source des biens</dt><dd>Page publique du conseiller</dd></div>
+          <div class="r"><dt>Alternance</dt><dd>Acheteurs / vendeurs, une semaine sur deux</dd></div>
+          <div class="r"><dt>Statut</dt><dd>En production depuis avril</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="body2">
+      <div>
+        <p>Un conseiller immobilier qui publie régulièrement prend l’avantage sur son secteur. Le problème n’est pas de le savoir, c’est de le faire : entre deux visites, personne n’ouvre un outil de création le dimanche matin.</p>
+        <p>Le mercredi, l’agent écrit un post d’actualité immobilière sur le marché français et martiniquais, et <strong>change de public une semaine sur deux</strong> : les acheteurs en semaine paire, les vendeurs en semaine impaire. La page ne parle jamais à tout le monde en même temps. Il génère l’illustration à la charte de l’enseigne, sans aucun texte dans l’image.</p>
+        <p>Le dimanche, il va lire la page publique du conseiller, en extrait les annonces réellement en ligne, choisit un bien jamais publié, récupère titre, prix, ville, description et photos, rédige l’annonce et publie un carrousel. Si le bien a une visite vidéo, elle part aussi.</p>
+      </div>
+      <div>
+        <div class="hard">
+          <div class="t">La difficulté réelle</div>
+          <p>Deux pièges, tous les deux invisibles jusqu’au jour où ils cassent la page.</p>
+          <p style="margin-top:14px"><strong>Les photos des voisins.</strong> Une fiche de bien contient aussi le bloc « ces biens pourraient vous plaire » — des annonces d’autres conseillers. Un extracteur naïf publie leurs photos. Ici, seules les images dont l’URL porte l’identifiant du bien courant sont retenues.</p>
+          <p style="margin-top:14px"><strong>La mémoire.</strong> La liste des biens déjà publiés vivait dans la mémoire du scénario — elle disparaissait au moindre ré-import. Elle est maintenant dans une table dédiée, qui survit à tout. Quand tous les biens sont passés, la rotation reprend au premier : la page ne tombe jamais en panne de contenu.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><div class="v">2</div><div class="k">publications par semaine</div></div>
+      <div><div class="v">0</div><div class="k">bien publié deux fois</div></div>
+      <div><div class="v">2</div><div class="k">formats dans un seul scénario</div></div>
+      <div><div class="v">35</div><div class="k">nœuds orchestrés</div></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Meta Graph API</span><span class="tag">Carrousel + vidéo</span>
+      <span class="tag">Extraction web</span><span class="tag">Table d’état n8n</span>
+      <span class="tag">Rotation de contenu</span><span class="tag">gpt-image-2</span>
+    </div>
+  </article>
+
+  <!-- ─── 04 ─── -->
+  <article class="case rv">
+    <div class="caseMeta">
+      <span class="num">N° 04</span><span>SOS Thierry · travaux publics, Guyane</span><span>27 nœuds</span>
+      <span>Notion · Vision · Cloudinary</span><span class="live">Actif</span>
+    </div>
+    <h3>L’agent qui transforme des photos de chantier en contenu Instagram</h3>
+    <p class="oneline">Il regarde vraiment les photos, choisit, retouche seulement si nécessaire, écrit la légende et dépose un brouillon prêt dans Notion. Le client valide et publie.</p>
+
+    <div class="caseGrid">
+      <div>
+        <div class="player" data-src="videos/agent-instagram.mp4">
+          <img class="poster" src="posters/agent-instagram.jpg" alt="Flux d’exécution de l’agent de préparation Instagram">
+          <button class="play" aria-label="Lire la démonstration">
+            <span><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg>Voir le flux · 43 s</span>
+          </button>
+        </div>
+        <div class="vcap"><span>Démonstration · flux réel</span><span>Sans son</span></div>
+      </div>
+      <div class="fiche">
+        <dl>
+          <div class="r"><dt>Déclencheur</dt><dd>Lundi, minuit — lot hebdomadaire</dd></div>
+          <div class="r"><dt>Matière</dt><dd>Photos de chantier du client, dans Notion</dd></div>
+          <div class="r"><dt>Analyse</dt><dd>Vision sur chaque photo, avec avis d’exploitabilité</dd></div>
+          <div class="r"><dt>Ligne éditoriale</dt><dd>5 piliers en rotation</dd></div>
+          <div class="r"><dt>Livraison</dt><dd>Brouillon Notion, statut « prêt »</dd></div>
+          <div class="r"><dt>Publication</dt><dd>Par le client, jamais par l’agent</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="body2">
+      <div>
+        <p>Une entreprise de terrassement en Guyane a des centaines de photos de chantier dans un téléphone et pas une minute pour en faire du contenu. Le compte Instagram existe et ne bouge pas.</p>
+        <p>Chaque lundi, l’agent ouvre la banque de photos du client et <strong>regarde réellement chaque image</strong> : un modèle de vision décrit la scène, identifie le matériel et dit si la photo est exploitable telle quelle. Il choisit ensuite le pilier de la semaine parmi cinq — mini-pelle avec chauffeur, déboisement, tranchées et réseaux, préparation de terrain, clôture — et écrit la légende avec le vocabulaire du métier.</p>
+        <p>Sur le visuel, trois voies dans l’ordre : <strong>la photo du client telle quelle</strong>, sinon la même photo retouchée une fois, sinon une image générée. Le recadrage au format du fil est automatique, centré sur le sujet détecté.</p>
+      </div>
+      <div>
+        <div class="hard">
+          <div class="t">Le parti pris</div>
+          <p>Cet agent est <strong>volontairement bridé : il prépare, il ne publie pas.</strong></p>
+          <p style="margin-top:14px">Le brouillon arrive dans Notion avec le statut « prêt », la légende copiable et l’image finale. Le client relit, corrige un mot s’il veut, publie quand il veut.</p>
+          <p style="margin-top:14px">Sur le compte d’une entreprise de métier, où une photo mal choisie se voit tout de suite, la validation humaine vaut mieux qu’une cadence parfaite. Automatiser jusqu’au bout n’est pas toujours la bonne réponse — savoir où s’arrêter fait partie du travail.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><div class="v">1 lot</div><div class="k">préparé chaque semaine</div></div>
+      <div><div class="v">5</div><div class="k">piliers en rotation</div></div>
+      <div><div class="v">3</div><div class="k">voies de production d’image</div></div>
+      <div><div class="v">0</div><div class="k">publication sans validation</div></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Notion API</span><span class="tag">Vision</span>
+      <span class="tag">gpt-image-2 · edits</span><span class="tag">Cloudinary</span>
+      <span class="tag">Human-in-the-loop</span><span class="tag">Table d’état n8n</span>
+    </div>
+  </article>
+</section>
+
+<!-- ══════════ GARDE-FOUS ══════════ -->
+<section id="garde-fous">
+  <div class="wrap">
+    <div class="shead rv">
+      <h2>Ce qu’un agent<br>doit refuser de faire</h2>
+      <div class="idx">Les garde-fous</div>
+    </div>
+    <p class="intro rv">La partie difficile n’est jamais de faire fonctionner l’agent. C’est de garantir qu’il ne fera pas de dégât le jour où le cas est bizarre. Voici les règles qui tournent réellement dans les scénarios ci-dessus.</p>
+
+    <div class="rules">
+      <div class="rule-c rv"><div class="n">01</div>
+        <h4>En cas de doute, ne rien faire</h4>
+        <p>Litige, menace, chargeback, ou simple incertitude sur la marche à suivre : l’agent <b>n’envoie rien, n’archive rien, ne marque rien comme lu</b>. Le message reste non lu, visible, en attente d’un humain. Cette règle prime sur toutes les autres.</p></div>
+
+      <div class="rule-c rv"><div class="n">02</div>
+        <h4>Jamais deux fois la même réponse</h4>
+        <p>Avant tout envoi, l’agent relit les <b>six derniers échanges sur trente jours</b>, dans les deux sens, corbeille comprise. Si sa réponse redit ce qu’on a déjà écrit — même avec une date différente — il n’envoie pas.</p></div>
+
+      <div class="rule-c rv"><div class="n">03</div>
+        <h4>Lire et écrire ne se mélangent pas</h4>
+        <p>Toutes les recherches dans la boutique passent par un <b>routeur en lecture seule</b> : commande par numéro, recherche client, commande par identifiant, transactions. Aucun mouvement d’argent n’est atteignable depuis cet outil.</p></div>
+
+      <div class="rule-c rv"><div class="n">04</div>
+        <h4>Pas de remboursement sur un calcul partiel</h4>
+        <p>Quand l’agent modifie une commande, il vérifie que <b>chaque ligne a bien été appliquée</b> avant de valider. Si une seule échoue, la validation est bloquée : on ne rembourse jamais un montant calculé sur une modification incomplète.</p></div>
+
+      <div class="rule-c rv"><div class="n">05</div>
+        <h4>Ne rien publier plutôt qu’un doublon</h4>
+        <p>Un sujet trop proche d’un article existant n’est pas publié. Le seuil n’est pas une intuition : il a été <b>calibré sur le corpus réel</b>, 8 doublons connus sur 8 détectés, aucun faux positif. La ligne est tracée avec son score.</p></div>
+
+      <div class="rule-c rv"><div class="n">06</div>
+        <h4>L’état ne vit pas dans le workflow</h4>
+        <p>Ce qui a déjà été publié est stocké dans une <b>table dédiée</b>, pas dans la mémoire du scénario. Un ré-import, une migration, une restauration : la mémoire survit. Sinon, un jour, la page republie tout depuis le début.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MÉTHODE ══════════ -->
+<section id="methode" class="wrap">
+  <div class="shead rv">
+    <h2>Comment ça se passe</h2>
+    <div class="idx">Méthode</div>
+  </div>
+  <p class="intro rv">Pas de cahier des charges de quarante pages. On part de la tâche qui vous coûte le plus de temps, et on la fait tourner sur vos vraies données le plus vite possible.</p>
+
+  <div class="steps">
+    <div class="step rv"><div class="n">01</div><h4>Cadrage</h4>
+      <p>Un appel. On liste ce qui se répète dans votre semaine et on garde la tâche qui coûte le plus cher. Une seule, pour commencer.</p></div>
+    <div class="step rv"><div class="n">02</div><h4>Prototype</h4>
+      <p>Un scénario qui tourne sur vos vraies données, pas sur un jeu d’exemple. Vous voyez le résultat avant de décider quoi que ce soit.</p></div>
+    <div class="step rv"><div class="n">03</div><h4>Garde-fous</h4>
+      <p>On définit ce que l’agent n’a pas le droit de faire, ce qu’il doit vous laisser, et ce qui se passe quand il échoue. C’est là que se joue la confiance.</p></div>
+    <div class="step rv"><div class="n">04</div><h4>Production</h4>
+      <p>Mise en service sur mon instance n8n, journal d’exécution consultable, alerte en cas d’échec. Rien à installer chez vous.</p></div>
+  </div>
+
+  <div class="stack">
+    <div class="r rv"><span>n8n</span><span>Orchestration · instance dédiée</span></div>
+    <div class="r rv"><span>Agents + outils</span><span>GPT · sous-workflows · sorties JSON strictes</span></div>
+    <div class="r rv"><span>Shopify Admin API</span><span>REST + GraphQL · Order Edit · métafields</span></div>
+    <div class="r rv"><span>Gmail API</span><span>Lecture, réponse, historique, corbeille</span></div>
+    <div class="r rv"><span>Meta Graph API</span><span>Carrousels, vidéos, pages</span></div>
+    <div class="r rv"><span>Notion API</span><span>Banque de contenu · brouillons validables</span></div>
+    <div class="r rv"><span>Google Sheets &amp; Drive</span><span>Files de production, journaux, livrables</span></div>
+    <div class="r rv"><span>Vision &amp; génération d’images</span><span>Analyse de photos · gpt-image-2 · retouche</span></div>
+    <div class="r rv"><span>SEO technique</span><span>JSON-LD, maillage interne, métafields</span></div>
+    <div class="r rv"><span>Cloudinary · APIs tierces</span><span>Médias, suivi transporteur, webhooks</span></div>
+  </div>
+</section>
+
+<!-- ══════════ À PROPOS ══════════ -->
+<section id="apropos" class="wrap" style="border-top:1px solid var(--rule)">
+  <div class="shead rv">
+    <h2>Qui écrit ces scénarios</h2>
+    <div class="idx">À propos</div>
+  </div>
+  <div class="about">
+    <div class="rv">
+      <p class="big">Je ne viens pas du conseil. J’ai une boutique en ligne et je fais de l’immobilier — j’ai commencé par automatiser mes propres opérations.</p>
+    </div>
+    <div class="rv">
+      <p>Ryan Charles, basé en Martinique. Je vends un produit en ligne depuis plusieurs années et je suis mandataire immobilier. Ces deux activités m’ont donné exactement les problèmes que j’automatise aujourd’hui : trop d’e-mails identiques, un blog impossible à tenir, une page sociale qui s’éteint dès qu’on arrête d’y penser.</p>
+      <p>Les deux premiers agents présentés ici tournent sur ma propre boutique. Je les ai construits pour moi, cassés, reconstruits, et je sais exactement où ils font mal. Les deux autres tournent chez des clients, sur mon instance n8n.</p>
+      <p>Ce que je vends n’est pas « de l’IA ». C’est un scénario qui tourne, un journal d’exécution qu’on peut ouvrir, et une liste écrite de ce que l’agent n’a pas le droit de faire.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact">
+  <div class="wrap contactGrid">
+   <div>
+    <div class="eyebrow rv">Disponible pour de nouveaux projets</div>
+    <h2 class="rv" style="margin-top:20px">Dites-moi ce qui vous prend le plus de temps chaque semaine.</h2>
+    <p class="sub rv">Peu importe votre secteur et vos outils : si c’est répétitif, écrit quelque part et fait à heure fixe, ça s’automatise. Un appel de vingt minutes suffit pour savoir si c’est faisable — et surtout si ça vaut le coup. Si la réponse est non, je vous le dirai.</p>
+    <div class="links rv">
+      <a class="btn solid" href="mailto:ryan.charles1@hotmail.com">ryan.charles1@hotmail.com</a>
+      <a class="btn" href="https://www.malt.fr/profile/ryancharles" target="_blank" rel="noopener">Profil Malt</a>
+    </div>
+   </div>
+   <aside class="panel rv">
+     <div class="phead">Ce sur quoi j’interviens</div>
+     <div class="pr"><span class="a">Service client automatisé</span><span class="b">e-mail · commandes</span></div>
+     <div class="pr"><span class="a">Contenu &amp; SEO en continu</span><span class="b">blog · fiches</span></div>
+     <div class="pr"><span class="a">Publication sociale</span><span class="b">facebook · instagram</span></div>
+     <div class="pr"><span class="a">Qualification et relance de leads</span><span class="b">immobilier</span></div>
+     <div class="pr"><span class="a">Synchronisation d’outils</span><span class="b">apis · crm · sheets</span></div>
+     <div class="pr"><span class="a" style="color:var(--signal)">Autre chose — décrivez, on regarde</span><span class="b">le plus fréquent</span></div>
+     <div class="pfoot">Ces exemples viennent de projets réels, pas d’un catalogue. Si une tâche se répète chez vous, elle s’automatise — quel que soit votre métier ou vos outils.</div>
+   </aside>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="in">
+    <span>© <span id="yr"></span> Ryan Charles · Martinique</span>
+    <span>Agents IA &amp; automatisation n8n</span>
+    <span>ryania.fr</span>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

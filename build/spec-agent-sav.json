@@ -1,0 +1,131 @@
+{
+ "num": "01",
+ "bar": "Acose — agent service client",
+ "name": "L’agent qui répond<br>au service client",
+ "sub": "Il lit l’e-mail, retrouve la commande dans Shopify, interroge le transporteur, écrit la réponse et l’envoie. Sans relecture humaine.",
+ "chips": [
+  "Acose · e-commerce",
+  "30 nœuds",
+  "En production"
+ ],
+ "problem": {
+  "eyebrow": "Avant",
+  "text": "Chaque « où est mon colis ? » obligeait à ouvrir trois outils, retrouver la commande, puis réécrire à la main la même réponse.",
+  "metrics": [
+   {
+    "v": "3",
+    "k": "outils à croiser par e-mail"
+   },
+   {
+    "v": "7 j/7",
+    "k": "week-ends compris"
+   },
+   {
+    "v": "0",
+    "k": "réponse la nuit"
+   }
+  ]
+ },
+ "steps": [
+  {
+   "kind": "Déclencheur",
+   "node": "Gmail Trigger",
+   "title": "Un e-mail arrive dans la boîte support",
+   "sub": "L’agent se réveille sur chaque nouveau message, jour et nuit.",
+   "data": "de : <b>c.mercier@…</b> · objet : « Toujours rien reçu ? »"
+  },
+  {
+   "kind": "Mémoire",
+   "node": "Historique client",
+   "title": "Il relit d’abord ce qu’on a déjà répondu",
+   "sub": "Six derniers échanges sur 30 jours, dans les deux sens, corbeille comprise.",
+   "data": "4 messages retrouvés · dernière réponse Acose : <b>il y a 2 jours</b>"
+  },
+  {
+   "kind": "Garde-fou",
+   "node": "Contrôle doublon",
+   "title": "Si sa réponse serait la même que la dernière, il n’envoie rien",
+   "sub": "Le message reste non lu, pour un humain. Cette règle prime sur toutes les autres.",
+   "data": "réponse rédigée ≠ dernier envoi → <b>on continue</b>"
+  },
+  {
+   "kind": "Lecture",
+   "node": "Shopify — commande",
+   "title": "Il retrouve la commande dans Shopify",
+   "sub": "Un routeur en lecture seule regroupe quatre recherches derrière un seul outil. Aucun mouvement d’argent possible ici.",
+   "data": "#10428 · payée le 14 août · <b>expédiée</b> · suivi disponible"
+  },
+  {
+   "kind": "Suivi",
+   "node": "17track",
+   "title": "Il interroge le transporteur en direct",
+   "sub": "Enregistrement du numéro, attente, puis lecture du statut réel du colis.",
+   "data": "DOFR9010142051814HD · <b>en cours d’acheminement</b> · 18 JUIN 2026"
+  },
+  {
+   "kind": "Décision",
+   "node": "Classement du cas",
+   "title": "Il identifie le scénario exact",
+   "sub": "Suivi, annulation, remboursement, changement d’adresse, quantité, colis perdu… ou hors périmètre.",
+   "data": "cas retenu : <b>suivi de colis · retard transporteur</b>"
+  },
+  {
+   "kind": "Rédaction",
+   "node": "Modèles Acose",
+   "title": "Il écrit avec les mots de la marque",
+   "sub": "Modèles maison, mise en forme imposée, signature fixe. Aucune improvisation de ton.",
+   "data": "« Bonjour Camille, votre colis est bien parti… » — <b>Loïc, service client</b>"
+  },
+  {
+   "kind": "Action",
+   "node": "Gmail — répondre",
+   "title": "La réponse part",
+   "sub": "Pas de file d’attente, pas de validation. Le client a sa réponse avant d’avoir relancé.",
+   "data": "envoyé · <b>13 s</b> après réception"
+  },
+  {
+   "kind": "Classement",
+   "node": "Gmail — corbeille",
+   "title": "Le fil est archivé, la boîte reste vide",
+   "sub": "Uniquement quand la conversation est réellement terminée. Sinon le message reste visible.",
+   "data": "fil archivé · boîte support : <b>0 en attente</b>"
+  }
+ ],
+ "result": {
+  "text": "Le service client tourne seul. Ryan n’ouvre la boîte que pour les cas qu’on lui a laissés exprès.",
+  "metrics": [
+   {
+    "v": "58",
+    "k": "exécutions en 7 jours"
+   },
+   {
+    "v": "0",
+    "k": "échec sur la période"
+   },
+   {
+    "v": "13 s",
+    "k": "délai de réponse type"
+   }
+  ],
+  "line": "Litige, menace, chargeback, ou simple doute sur la marche à suivre : l’agent ne touche à rien et laisse le message non lu. Ce sont les seuls que Ryan traite."
+ },
+ "t": {
+  "title": [
+   0,
+   3.4
+  ],
+  "prob": [
+   3.4,
+   8.2
+  ],
+  "flow": [
+   8.2,
+   35.2
+  ],
+  "end": [
+   35.2,
+   42.800000000000004
+  ]
+ },
+ "duration": 42.8
+}
