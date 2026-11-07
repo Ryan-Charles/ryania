@@ -1,0 +1,68 @@
+{
+ "maj": "2026-11-06T21:40:00Z",
+ "agents": [
+  {
+   "id": "colette",
+   "nom": "Colette",
+   "role": "Service client",
+   "zone": "acose",
+   "statut": "actif",
+   "dernier_run": "2026-11-06T17:19:42.544Z",
+   "runs_7j": 56
+  },
+  {
+   "id": "roger",
+   "nom": "Roger",
+   "role": "Recherche commandes",
+   "zone": "acose",
+   "statut": "actif",
+   "dernier_run": "2026-11-06T02:03:59.938Z",
+   "runs_7j": 29
+  },
+  {
+   "id": "sacha",
+   "nom": "Sacha",
+   "role": "Éditorial SEO",
+   "zone": "acose",
+   "statut": "pause",
+   "dernier_run": null,
+   "runs_7j": 0
+  },
+  {
+   "id": "leo",
+   "nom": "Léo",
+   "role": "Posts LinkedIn",
+   "zone": "ryania",
+   "statut": "pause",
+   "dernier_run": null,
+   "runs_7j": 0
+  },
+  {
+   "id": "sofia",
+   "nom": "Sofia",
+   "role": "Carrousels Instagram",
+   "zone": "immobilier",
+   "statut": "pause",
+   "dernier_run": null,
+   "runs_7j": 0
+  },
+  {
+   "id": "theo",
+   "nom": "Théo",
+   "role": "Préparation Instagram",
+   "zone": "btp",
+   "statut": "veille",
+   "dernier_run": "2026-11-02T04:00:47.101Z",
+   "runs_7j": 1
+  },
+  {
+   "id": "jeanne",
+   "nom": "Jeanne",
+   "role": "Publication Facebook",
+   "zone": "immobilier",
+   "statut": "veille",
+   "dernier_run": "2026-11-04T09:00:35.085Z",
+   "runs_7j": 2
+  }
+ ]
+}
