@@ -90,6 +90,15 @@
         v.playsInline = true;
         v.preload = 'auto';
         v.setAttribute('controlslist', 'nodownload');
+
+        var video = p.dataset.src;
+        v.addEventListener('playing', function () {
+          window.umami?.track('video-lecture', { video: video });
+        }, { once: true });
+        v.addEventListener('ended', function () {
+          window.umami?.track('video-fin', { video: video });
+        }, { once: true });
+
         p.insertBefore(v, p.firstChild);
       }
       p.classList.add('on');

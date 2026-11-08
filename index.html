@@ -13,7 +13,7 @@
 <meta property="og:image" content="posters/agent-sav.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E4E6E1'/><text y='.9em' x='8' font-size='84' font-family='Georgia,serif' fill='%231B36C4'>R</text></svg>">
-<link rel="stylesheet" href="assets/style.css?v=6">
+<link rel="stylesheet" href="assets/style.css?v=7">
 </head>
 <body>
 <div id="rail"></div>
@@ -25,7 +25,7 @@
       <a href="#cas">Les agents</a>
       <a href="#methode">Méthode</a>
       <a href="#apropos">À propos</a>
-      <button class="cta" type="button" data-rappel>Travailler ensemble</button>
+      <button class="cta" type="button" data-rappel data-umami-event="contact-ouverture" data-umami-event-emplacement="navigation">Travailler ensemble</button>
     </nav>
   </div>
 </header>
@@ -367,8 +367,8 @@
     <h2 class="rv" style="margin-top:20px">Dites-moi ce qui vous prend le plus de temps chaque semaine.</h2>
     <p class="sub rv">Peu importe votre secteur et vos outils : si c’est répétitif, écrit quelque part et fait à heure fixe, ça s’automatise. Un appel de vingt minutes suffit pour savoir si c’est faisable — et surtout si ça vaut le coup. Si la réponse est non, je vous le dirai.</p>
     <div class="links rv">
-      <button class="btn solid" type="button" data-rappel>Être recontacté</button>
-      <a class="btn" href="mailto:ryan.charles1@hotmail.com">Envoyer un mail</a>
+      <button class="btn solid" type="button" data-rappel data-umami-event="contact-ouverture" data-umami-event-emplacement="contact">Être recontacté</button>
+      <a class="btn" href="mailto:ryan.charles1@hotmail.com" data-umami-event="contact-email">Envoyer un mail</a>
     </div>
    </div>
    <aside class="panel rv">
@@ -378,7 +378,7 @@
      <div class="pr"><span class="a">Publication sociale</span><span class="b">facebook · instagram</span></div>
      <div class="pr"><span class="a">Qualification et relance de leads</span><span class="b">immobilier</span></div>
      <div class="pr"><span class="a">Synchronisation d’outils</span><span class="b">apis · crm · sheets</span></div>
-     <button class="pr trig" type="button" data-rappel><span class="a">Autre chose — décrivez, on regarde</span><span class="b">le plus fréquent</span></button>
+     <button class="pr trig" type="button" data-rappel data-umami-event="contact-ouverture" data-umami-event-emplacement="services"><span class="a">Autre chose — décrivez, on regarde</span><span class="b">le plus fréquent</span></button>
      <div class="pfoot">Ces exemples viennent de projets réels, pas d’un catalogue. Si une tâche se répète chez vous, elle s’automatise — quel que soit votre métier ou vos outils.</div>
    </aside>
   </div>
@@ -425,11 +425,21 @@
   <div class="in">
     <span>© <span id="yr"></span> Ryan Charles · Martinique</span>
     <span>Agents IA &amp; automatisation n8n</span>
-    <span>ryania.fr</span>
+    <button class="analytics-settings" id="analytics-settings" type="button" aria-controls="analytics-choice" hidden>Préférences de statistiques</button>
   </div>
 </footer>
 
-<script src="assets/app.js?v=4"></script>
+<aside class="analytics-choice" id="analytics-choice" aria-labelledby="analytics-title" hidden>
+  <h2 id="analytics-title">Mesure d’audience</h2>
+  <p>Avec ton accord, Umami mesure les visites, les pays estimés, la lecture des vidéos et les clics de contact. Tu peux modifier ton choix en bas de page.</p>
+  <div class="analytics-actions">
+    <button type="button" data-analytics-choice="refused">Refuser</button>
+    <button type="button" data-analytics-choice="accepted">Accepter</button>
+  </div>
+</aside>
+
+<script src="assets/analytics.js?v=1" defer data-website-id="4e69f2d7-c2eb-4bb7-ada2-63e45bddf8bc"></script>
+<script src="assets/app.js?v=5"></script>
 <script src="assets/qg-widget.js?v=1" defer></script>
 </body>
 </html>

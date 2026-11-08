@@ -365,3 +365,14 @@ button.btn{cursor:pointer;font-family:"JetBrains Mono",monospace}
   .qgFoot span:not(.qgSum){display:none}
   .qgSum{margin-left:0}
 }
+
+/* ══════════ préférences de statistiques ══════════ */
+.analytics-settings{border:0;background:none;color:inherit;font:inherit;text-decoration:underline;cursor:pointer}
+.analytics-choice{position:fixed;right:16px;bottom:16px;z-index:1000;
+  width:min(410px,calc(100% - 32px));padding:18px;background:var(--card);color:var(--ink);
+  border:1px solid var(--rule);border-radius:8px;box-shadow:0 8px 28px #14171526}
+.analytics-choice h2{font:600 18px/1.3 Archivo,Arial,sans-serif}
+.analytics-choice p{margin:8px 0 14px;font-size:14px}
+.analytics-actions{display:flex;gap:8px;flex-wrap:wrap}
+.analytics-actions button{padding:8px 14px;border:1px solid var(--signal);border-radius:4px;
+  background:transparent;color:var(--signal);font:inherit;font-size:14px;cursor:pointer}
