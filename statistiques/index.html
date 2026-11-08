@@ -9,10 +9,20 @@
 <style>
 .stats-page{padding-block:clamp(24px,5vw,54px)}
 .stats-page h1{font-size:clamp(32px,5vw,60px);line-height:1.08;margin-block:8px 12px}
-.stats-page p{color:var(--muted);margin-bottom:18px}
-.stats-page iframe{display:block;width:100%;height:clamp(720px,82dvh,1000px);border:1px solid var(--rule);border-radius:8px;background:#fff}
-.stats-page .fallback{font-size:14px;margin:12px 0 0}
+.stats-toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-block:20px}
+.stats-toolbar select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--muted);border-radius:4px;padding:6px 10px}
+.stats-page .kpis{margin-top:0}
+.stats-page .kpi{display:flex;flex-direction:column-reverse}
+.stats-status{color:var(--muted);font-size:14px;margin-block:10px 16px}
+.stats-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin-block:24px}
+.stats-group{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:18px;min-width:0}
+.stats-group h2{font-size:17px;margin-bottom:8px}
+.stats-group dl div{display:flex;justify-content:space-between;gap:16px;padding-block:8px;border-top:1px solid var(--rule)}
+.stats-group dt{overflow-wrap:anywhere}
+.stats-group dd{font-variant-numeric:tabular-nums;font-weight:600}
+.stats-note{color:var(--muted);font-size:14px}
 </style>
+<script src="/assets/statistiques.js?v=1" defer></script>
 </head>
 <body>
 <header>
@@ -23,11 +33,41 @@
 <main class="wrap stats-page">
   <p class="eyebrow">Audience du site</p>
   <h1 class="serif">Statistiques de fréquentation</h1>
-  <p>Consultez les visites, les pays des visiteurs et les interactions sur ryania.fr.</p>
-  <iframe src="https://cloud.umami.is/share/v6Z5ypNT96SaS7nj"
-          title="Tableau de bord Umami de ryania.fr"
-          referrerpolicy="no-referrer"></iframe>
-  <p class="fallback"><a href="https://cloud.umami.is/share/v6Z5ypNT96SaS7nj" rel="noreferrer">Ouvrir le tableau de bord dans Umami</a></p>
+  <div class="stats-toolbar">
+    <label for="stats-period">Période</label>
+    <select id="stats-period">
+      <option value="1">Dernières 24 heures</option>
+      <option value="7">7 derniers jours</option>
+      <option value="30" selected>30 derniers jours</option>
+    </select>
+  </div>
+  <p id="stats-status" class="stats-status" role="status"></p>
+  <noscript><p>Activez JavaScript pour afficher les statistiques.</p></noscript>
+  <div id="stats-results" hidden>
+    <dl class="kpis">
+      <div class="kpi"><dt class="k">Visiteurs</dt><dd class="v" id="visitors"></dd></div>
+      <div class="kpi"><dt class="k">Visites</dt><dd class="v" id="visits"></dd></div>
+      <div class="kpi"><dt class="k">Pages vues</dt><dd class="v" id="pageviews"></dd></div>
+      <div class="kpi"><dt class="k">Lectures de démos</dt><dd class="v" id="video-starts"></dd></div>
+    </dl>
+    <div class="stats-groups">
+      <section class="stats-group" aria-labelledby="countries-heading">
+        <h2 id="countries-heading">Pays des visiteurs</h2>
+        <dl id="countries"></dl>
+        <p id="countries-empty" hidden>Aucun pays pour cette période.</p>
+      </section>
+      <section class="stats-group" aria-labelledby="sources-heading">
+        <h2 id="sources-heading">Sites référents</h2>
+        <dl id="sources"></dl>
+        <p id="sources-empty" hidden>Aucun site référent pour cette période.</p>
+      </section>
+      <section class="stats-group" aria-labelledby="interactions-heading">
+        <h2 id="interactions-heading">Interactions</h2>
+        <dl id="interactions"></dl>
+      </section>
+    </div>
+    <p class="stats-note">Source Umami. Ces chiffres couvrent les visites mesurées avec l’accord des visiteurs. Le pays est estimé.</p>
+  </div>
 </main>
 </body>
 </html>
