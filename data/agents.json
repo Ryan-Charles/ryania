@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-13T10:07:27.795Z",
+ "maj": "2026-11-14T10:07:27.580Z",
  "agents": [
   {
    "id": "colette",
@@ -7,8 +7,8 @@
    "role": "Service client",
    "zone": "acose",
    "statut": "actif",
-   "dernier_run": "2026-11-13T06:32:42.872Z",
-   "runs_7j": 70
+   "dernier_run": "2026-11-14T07:18:42.620Z",
+   "runs_7j": 73
   },
   {
    "id": "roger",
@@ -16,8 +16,8 @@
    "role": "Recherche commandes",
    "zone": "acose",
    "statut": "actif",
-   "dernier_run": "2026-11-13T02:19:52.819Z",
-   "runs_7j": 23
+   "dernier_run": "2026-11-14T00:43:53.810Z",
+   "runs_7j": 26
   },
   {
    "id": "sacha",
