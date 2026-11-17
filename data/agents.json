@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-16T10:07:28.452Z",
+ "maj": "2026-11-17T10:07:28.676Z",
  "agents": [
   {
    "id": "colette",
@@ -7,7 +7,7 @@
    "role": "Service client",
    "zone": "acose",
    "statut": "actif",
-   "dernier_run": "2026-11-16T01:02:42.613Z",
+   "dernier_run": "2026-11-17T04:46:42.583Z",
    "runs_7j": 83
   },
   {
@@ -16,7 +16,7 @@
    "role": "Recherche commandes",
    "zone": "acose",
    "statut": "actif",
-   "dernier_run": "2026-11-15T23:52:56.394Z",
+   "dernier_run": "2026-11-17T04:47:01.332Z",
    "runs_7j": 27
   },
   {
@@ -51,7 +51,7 @@
    "nom": "Théo",
    "role": "Préparation Instagram",
    "zone": "btp",
-   "statut": "actif",
+   "statut": "veille",
    "dernier_run": "2026-11-16T04:00:47.117Z",
    "runs_7j": 1
   },
@@ -60,7 +60,7 @@
    "nom": "Jeanne",
    "role": "Publication Facebook",
    "zone": "immobilier",
-   "statut": "actif",
+   "statut": "veille",
    "dernier_run": "2026-11-15T14:00:25.103Z",
    "runs_7j": 2
   }
