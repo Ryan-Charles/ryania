@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ryan Charles — AI Agents and n8n Automation in Production</title>
+<meta name="description" content="I build AI agents that run in production for customer support, SEO, and social publishing. Explore four real agents across 115 n8n nodes, with demos and case studies.">
+<meta name="author" content="Ryan Charles">
+<meta property="og:title" content="Ryan Charles — AI Agents in Production">
+<meta property="og:description" content="Four working AI agents for customer support, SEO content, Facebook publishing, and Instagram content. Watch the workflows and see how they perform in production.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:url" content="https://ryania.fr/en/">
+<meta property="og:image" content="https://ryania.fr/posters/agent-sav.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E4E6E1'/><text y='.9em' x='8' font-size='84' font-family='Georgia,serif' fill='%231B36C4'>R</text></svg>">
+<link rel="canonical" href="https://ryania.fr/en/">
+<link rel="alternate" hreflang="fr" href="https://ryania.fr/">
+<link rel="alternate" hreflang="en" href="https://ryania.fr/en/">
+<link rel="alternate" hreflang="x-default" href="https://ryania.fr/">
+<script src="/assets/language.js"></script>
+<link rel="stylesheet" href="/assets/style.css?v=8">
+</head>
+<body>
+<div id="rail"></div>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="#top">ryan<b>ia</b></a>
+    <nav>
+      <a href="#cas">AI agents</a>
+      <a href="#methode">Process</a>
+      <a href="#apropos">About</a>
+      <button class="cta" type="button" data-rappel data-umami-event="contact-ouverture" data-umami-event-emplacement="navigation">Work with me</button>
+      <a class="language-switch" href="/?lang=fr" data-language="fr" hreflang="fr" lang="fr"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 16" width="18" height="12"><path fill="#0055a4" d="M0 0h8v16H0z"/><path fill="#fff" d="M8 0h8v16H8z"/><path fill="#ef4135" d="M16 0h8v16h-8z"/></svg><span>Français</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<main id="top">
+<div class="hero wrap">
+  <div class="heroGrid">
+   <div>
+    <div class="eyebrow rv in">Ryan Charles · Martinique · AI agents &amp; n8n automation</div>
+    <h1 class="rv in">I build AI agents that work for you, <em>day after day.</em></h1>
+    <div id="qgAgents" class="qgAgents rv in" role="group" aria-label="n8n agents in operation, with status updated daily"></div>
+    <p class="lede rv in">Four agents are running right now: they answer customer emails, write and publish blog posts, keep a Facebook page active, and prepare Instagram content. <strong>They run on their own.</strong> Here’s how they work.</p>
+   </div>
+   <aside class="panel rv in">
+     <div class="phead">n8n instance · Operational</div>
+     <a class="pr" href="#cas-01"><span class="a">Acose customer support</span><span class="b">30 nodes</span></a>
+     <a class="pr" href="#cas-02"><span class="a">Acose SEO content</span><span class="b">17 nodes</span></a>
+     <a class="pr" href="#cas-03"><span class="a">Facebook publishing</span><span class="b">35 nodes</span></a>
+     <a class="pr" href="#cas-04"><span class="a">Instagram content prep</span><span class="b">27 nodes</span></a>
+     <div class="pfoot">Last run · Sep 1 at 18:11</div>
+   </aside>
+  </div>
+
+  <div class="kpis rv in">
+    <div class="kpi"><div class="v">4</div><div class="k">agents in production</div></div>
+    <div class="kpi"><div class="v">115</div><div class="k">nodes orchestrated</div></div>
+    <div class="kpi"><div class="v">58</div><div class="k">runs in the past 7 days</div></div>
+    <div class="kpi"><div class="v">0</div><div class="k">failures in the period</div></div>
+  </div>
+</div>
+
+<div class="ticker rv in">
+  <div class="lbl">Execution log</div>
+  <div class="rail" id="tk"></div>
+</div>
+
+<!-- ══════════ CAS ══════════ -->
+<section id="cas" class="wrap">
+  <div class="shead rv">
+    <h2>Four agents,<br>four real problems</h2>
+    <div class="idx">01 — 04</div>
+  </div>
+  <p class="intro rv">Each of these workflows was built to solve a real problem. They grew out of repetitive work that cost teams time, and they’re all still running today. The videos show how each one works.</p>
+
+  <!-- ─── 01 ─── -->
+  <article class="case rv" id="cas-01">
+    <div class="caseMeta">
+      <span class="num">No. 01</span><span>Acose · e-commerce</span><span>30 nodes</span>
+      <span>Gmail · Shopify · GPT</span><span class="live">Active</span>
+    </div>
+    <h3>The agent that answers customer emails on its own</h3>
+    <p class="oneline">It reads the email, finds the order, checks the carrier’s tracking, writes a reply in the brand’s voice, and sends it. Then it archives the thread.</p>
+
+    <div class="caseGrid">
+      <div>
+        <div class="player" data-src="/videos/agent-sav.mp4">
+          <img class="poster" src="/posters/agent-sav.jpg" alt="Acose customer support agent workflow">
+          <button class="play" aria-label="Play the demo">
+            <span><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg>Watch the workflow · 43 s</span>
+          </button>
+        </div>
+        <div class="vcap"><span>Demo · Production workflow</span><span>No audio</span></div>
+      </div>
+      <div class="fiche">
+        <dl>
+          <div class="r"><dt>Trigger</dt><dd>New Gmail message</dd></div>
+          <div class="r"><dt>Frequency</dt><dd>Every message, 24/7</dd></div>
+          <div class="r"><dt>Scope</dt><dd>Tracking, cancellations, refunds, address changes, quantity changes, and missing parcels</dd></div>
+          <div class="r"><dt>Agent tools</dt><dd>9 tools, including 2 sub-workflows</dd></div>
+          <div class="r"><dt>Reply format</dt><dd>HTML replies, custom templates, and a standard signature</dd></div>
+          <div class="r"><dt>Status</dt><dd>In production since June</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="body2">
+      <details>
+        <summary>Description</summary>
+        <p>A shop that sells in France hears the same question every day: <strong>“Where’s my order?”</strong> To answer it properly, someone has to open the inbox, find the order in Shopify, check tracking with the carrier, and write a reply they’ve already written a hundred times.</p>
+        <p>The agent follows those same steps. It finds the order, submits the tracking number to the carrier, waits for a response, reads the current status, picks the right response from about ten scenarios, and sends a reply using the brand’s templates. It takes <strong>13 seconds</strong> for a simple case, or two and a half minutes when it needs to check with the carrier.</p>
+        <p>It also handles cancellations, refunds, delivery address changes, order quantity changes, and parcels marked as delivered that the customer never received.</p>
+      </details>
+      <details class="hard">
+        <summary>The real challenge</summary>
+        <p>Two mistakes an agent can make when writing to customers on your behalf: <strong>sending the same answer twice</strong>, and <strong>replying when the case needs human attention</strong>.</p>
+        <p style="margin-top:14px">Before sending a reply, it checks the last six exchanges with the customer over the past 30 days, including sent and deleted messages. If the reply repeats the previous answer, even with a different date, it leaves the message unread.</p>
+        <p style="margin-top:14px">For disputes, threats, chargebacks, or any case it’s unsure about, it leaves the email unread and unarchived so a person can handle it. This rule takes priority over all others.</p>
+      </details>
+    </div>
+
+    <div class="stats">
+      <div><div class="v">58</div><div class="k">runs in 7 days</div></div>
+      <div><div class="v">0</div><div class="k">failures in the period</div></div>
+      <div><div class="v">13 s</div><div class="k">reply time, simple case</div></div>
+      <div><div class="v">0</div><div class="k">manual reviews before sending</div></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Gmail API</span><span class="tag">Shopify Admin API</span>
+      <span class="tag">Agent + tools</span><span class="tag">Sub-workflows</span>
+      <span class="tag">Carrier tracking</span><span class="tag">Order Edit</span>
+    </div>
+  </article>
+
+  <!-- ─── 02 ─── -->
+  <article class="case rv" id="cas-02">
+    <div class="caseMeta">
+      <span class="num">No. 02</span><span>Acose · e-commerce</span><span>17 nodes</span>
+      <span>Shopify · Sheets · GPT</span><span class="live">Active</span>
+    </div>
+    <h3>The agent that writes, publishes, and helps Google index blog posts</h3>
+    <p class="oneline">Two posts a week for the store. The agent writes each one, adds internal links, metadata, structured data and an illustration, then publishes it automatically.</p>
+
+    <div class="caseGrid">
+      <div>
+        <div class="player" data-src="/videos/agent-seo.mp4">
+          <img class="poster" src="/posters/agent-seo.jpg" alt="SEO content agent workflow">
+          <button class="play" aria-label="Play the demo">
+            <span><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg>Watch the workflow · 46 s</span>
+          </button>
+        </div>
+        <div class="vcap"><span>Demo · Production workflow</span><span>No audio</span></div>
+      </div>
+      <div class="fiche">
+        <dl>
+          <div class="r"><dt>Trigger</dt><dd>Mondays and Thursdays at 4 a.m.</dd></div>
+          <div class="r"><dt>Frequency</dt><dd>2 posts per week</dd></div>
+          <div class="r"><dt>Content library</dt><dd>About 50 posts in one topic cluster</dd></div>
+          <div class="r"><dt>Output</dt><dd>Article, FAQ, JSON-LD, illustration, and metafields</dd></div>
+          <div class="r"><dt>Runtime</dt><dd>About 45 s per complete post</dd></div>
+          <div class="r"><dt>Status</dt><dd>In production since April</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="body2">
+      <details>
+        <summary>Description</summary>
+        <p>Writing a post with a language model is easy. Maintaining a <strong>coherent SEO cluster across 50 posts</strong> takes more work. You have to avoid repeating topics, link new pages to older ones, set the right tags, generate structured data, and link each post from a page Google crawls often.</p>
+        <p>The workflow takes the next topic from a queue, loads all published posts, checks for overlap, and picks four posts to link to. It writes the article in strict JSON under twelve editorial rules, then <strong>fixes common model errors</strong>, including extra H1 headings, duplicate URL slugs, bare product links, and assistant-style sign-offs.</p>
+        <p>It generates an illustration, publishes the post on Shopify, fills in its SEO metafields, then <strong>adds a link to the pillar page</strong>, the most frequently crawled page in the cluster. That final step helps new posts get indexed faster.</p>
+      </details>
+      <details class="hard">
+        <summary>The real challenge</summary>
+        <p>The first version checked for identical titles. It missed closely related topics, leaving <strong>pairs of posts competing for the same searches</strong>.</p>
+        <p style="margin-top:14px">The current version measures vocabulary overlap and weights it by how well the terms cover the target keyword. It ignores words that are too generic to be useful on this site and uses two thresholds, one for likely duplicates and one for confirmed duplicates.</p>
+        <p style="margin-top:14px">Testing against published articles found <strong>all 8 known duplicates with zero false positives</strong>. When it detects a duplicate, it skips publication and flags the row with the score and the matching article.</p>
+      </details>
+    </div>
+
+    <div class="stats">
+      <div><div class="v">2/week</div><div class="k">every week</div></div>
+      <div><div class="v">~45 s</div><div class="k">per complete post</div></div>
+      <div><div class="v">8/8</div><div class="k">known duplicates detected</div></div>
+      <div><div class="v">0</div><div class="k">false positives</div></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Shopify Admin API</span><span class="tag">Google Sheets</span>
+      <span class="tag">Strict JSON output</span><span class="tag">JSON-LD</span>
+      <span class="tag">Internal linking</span><span class="tag">gpt-image-2</span>
+    </div>
+  </article>
+
+  <!-- ─── 03 ─── -->
+  <article class="case rv" id="cas-03">
+    <div class="caseMeta">
+      <span class="num">No. 03</span><span>Real estate · Martinique</span><span>35 nodes</span>
+      <span>Meta Graph API · GPT</span><span class="live">Active</span>
+    </div>
+    <h3>The agent that runs a real estate agent’s Facebook page</h3>
+    <p class="oneline">It publishes an educational post on Wednesdays and showcases a listing on Sundays. The real estate agent can leave preparation and scheduling to the workflow.</p>
+
+    <div class="caseGrid">
+      <div>
+        <div class="player" data-src="/videos/agent-facebook.mp4">
+          <img class="poster" src="/posters/agent-facebook.jpg" alt="Facebook publishing agent workflow">
+          <button class="play" aria-label="Play the demo">
+            <span><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg>Watch the workflow · 46 s</span>
+          </button>
+        </div>
+        <div class="vcap"><span>Demo · Production workflow</span><span>No audio</span></div>
+      </div>
+      <div class="fiche">
+        <dl>
+          <div class="r"><dt>Triggers</dt><dd>Wednesday at 5 a.m. · Sunday at 10 a.m.</dd></div>
+          <div class="r"><dt>Wednesday</dt><dd>Educational post + generated illustration</dd></div>
+          <div class="r"><dt>Sunday</dt><dd>Listing carousel + video tour</dd></div>
+          <div class="r"><dt>Listing source</dt><dd>Real estate agent’s public page</dd></div>
+          <div class="r"><dt>Rotation</dt><dd>Buyers and sellers on alternate weeks</dd></div>
+          <div class="r"><dt>Status</dt><dd>In production since April</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="body2">
+      <details>
+        <summary>Description</summary>
+        <p>Posting regularly can help a real estate agent stand out locally. Finding time to make content on a Sunday morning between viewings is another matter.</p>
+        <p>On Wednesdays, the agent writes a real estate news post about France and Martinique. It <strong>switches audiences each week</strong>, writing for buyers in even-numbered weeks and sellers in odd-numbered weeks. It generates an illustration that matches the agency’s brand, with no text in the image.</p>
+        <p>On Sundays, it checks the real estate agent’s public page for live listings, selects a property it hasn’t featured before, and gathers the title, price, town, description, and photos. It writes the post and publishes a carousel, adding a video tour when one is available.</p>
+      </details>
+      <details class="hard">
+        <summary>The real challenge</summary>
+        <p>Two problems only became obvious once they disrupted the page.</p>
+        <p style="margin-top:14px"><strong>Photos from other listings.</strong> A listing page also features a “You might like these properties” section with listings from other agents. A basic scraper can pull in their photos. This workflow keeps only images whose URL contains the current property’s ID.</p>
+        <p style="margin-top:14px"><strong>Keeping track of published listings.</strong> The list of featured properties was originally stored inside the workflow and disappeared on reimport. It now lives in a dedicated table. Once every property has been featured, the workflow starts the rotation again so the page always has something to publish.</p>
+      </details>
+    </div>
+
+    <div class="stats">
+      <div><div class="v">2</div><div class="k">posts per week</div></div>
+      <div><div class="v">0</div><div class="k">duplicate listings per rotation</div></div>
+      <div><div class="v">2</div><div class="k">formats in one workflow</div></div>
+      <div><div class="v">35</div><div class="k">nodes orchestrated</div></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Meta Graph API</span><span class="tag">Carousel + video</span>
+      <span class="tag">Web extraction</span><span class="tag">n8n state table</span>
+      <span class="tag">Content rotation</span><span class="tag">gpt-image-2</span>
+    </div>
+  </article>
+
+  <!-- ─── 04 ─── -->
+  <article class="case rv" id="cas-04">
+    <div class="caseMeta">
+      <span class="num">No. 04</span><span>SOS Thierry · Civil works, French Guiana</span><span>27 nodes</span>
+      <span>Notion · Vision · Cloudinary</span><span class="live">Active</span>
+    </div>
+    <h3>The agent that turns jobsite photos into Instagram content</h3>
+    <p class="oneline">It reviews the photos, chooses one, edits it if needed, writes the caption, and leaves a ready-to-review draft in Notion. The client approves and publishes it.</p>
+
+    <div class="caseGrid">
+      <div>
+        <div class="player" data-src="/videos/agent-instagram.mp4">
+          <img class="poster" src="/posters/agent-instagram.jpg" alt="Instagram content agent workflow">
+          <button class="play" aria-label="Play the demo">
+            <span><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg>Watch the workflow · 43 s</span>
+          </button>
+        </div>
+        <div class="vcap"><span>Demo · Production workflow</span><span>No audio</span></div>
+      </div>
+      <div class="fiche">
+        <dl>
+          <div class="r"><dt>Trigger</dt><dd>Monday at midnight · Weekly batch</dd></div>
+          <div class="r"><dt>Source</dt><dd>Client’s jobsite photos in Notion</dd></div>
+          <div class="r"><dt>Review</dt><dd>Image analysis and usability check for each photo</dd></div>
+          <div class="r"><dt>Content plan</dt><dd>5 themes in rotation</dd></div>
+          <div class="r"><dt>Delivery</dt><dd>Notion draft marked “Ready”</dd></div>
+          <div class="r"><dt>Publishing</dt><dd>The client publishes after review</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="body2">
+      <details>
+        <summary>Description</summary>
+        <p>An excavation company in French Guiana has hundreds of jobsite photos on a phone and little time to turn them into content. Its Instagram account sits idle.</p>
+        <p>Every Monday, the agent opens the client’s photo library and <strong>reviews each image</strong>. A vision model describes the scene, identifies the equipment, and decides whether the photo can be used as is. The agent then picks one of five weekly themes: mini excavator with operator, land clearing, trenches and utilities, site preparation, or fencing. It writes the caption using the language of the trade.</p>
+        <p>For the visual, it starts with <strong>the client’s original photo</strong>, then tries one edit if needed. Generating a new image is the last option. The workflow automatically crops the visual for the feed, centered on the detected subject.</p>
+      </details>
+      <details class="hard">
+        <summary>Why approval stays with the client</summary>
+        <p>The agent’s job is to <strong>prepare the post for the client to publish.</strong></p>
+        <p style="margin-top:14px">The draft arrives in Notion marked “Ready,” with a copyable caption and the final image. The client can review it, edit it, and publish whenever they like.</p>
+        <p style="margin-top:14px">On a contractor’s Instagram page, a poorly chosen photo stands out immediately. Keeping human approval at this point matters more than posting on a perfect schedule.</p>
+      </details>
+    </div>
+
+    <div class="stats">
+      <div><div class="v">1 batch</div><div class="k">prepared each week</div></div>
+      <div><div class="v">5</div><div class="k">themes in rotation</div></div>
+      <div><div class="v">3</div><div class="k">ways to prepare an image</div></div>
+      <div><div class="v">0</div><div class="k">posts published without approval</div></div>
+    </div>
+    <div class="tags">
+      <span class="tag">Notion API</span><span class="tag">Vision</span>
+      <span class="tag">gpt-image-2 · edits</span><span class="tag">Cloudinary</span>
+      <span class="tag">Human-in-the-loop</span><span class="tag">n8n state table</span>
+    </div>
+  </article>
+</section>
+
+<!-- ══════════ MÉTHODE ══════════ -->
+<section id="methode" class="wrap">
+  <div class="shead rv">
+    <h2>How it works</h2>
+    <div class="idx">Process</div>
+  </div>
+  <p class="intro rv">We start with the task that takes up the most time and build a workflow that runs on your own data.</p>
+
+  <div class="steps">
+    <div class="step rv"><div class="n">01</div><h4>Scoping</h4>
+      <p>We get on a call, list the tasks you repeat each week, and pick the one that costs you the most to tackle first.</p></div>
+    <div class="step rv"><div class="n">02</div><h4>Prototype</h4>
+      <p>I build a workflow using your real data so you can see what it does before making a decision.</p></div>
+    <div class="step rv"><div class="n">03</div><h4>Safeguards</h4>
+      <p>We define which actions are off-limits, where a person takes over, and what happens if the workflow fails.</p></div>
+    <div class="step rv"><div class="n">04</div><h4>Go live</h4>
+      <p>I deploy it on my n8n instance. You can view the run log, and failures trigger alerts. There’s nothing to install on your end.</p></div>
+  </div>
+
+  <div class="stack">
+    <div class="r rv"><span>n8n</span><span>Orchestration · Dedicated instance</span></div>
+    <div class="r rv"><span>Agents + tools</span><span>GPT · Sub-workflows · Strict JSON output</span></div>
+    <div class="r rv"><span>Shopify Admin API</span><span>REST + GraphQL · Order Edit · Metafields</span></div>
+    <div class="r rv"><span>Gmail API</span><span>Reading, replying, history, and trash</span></div>
+    <div class="r rv"><span>Meta Graph API</span><span>Carousels, videos, and pages</span></div>
+    <div class="r rv"><span>Notion API</span><span>Content library · Drafts for approval</span></div>
+    <div class="r rv"><span>Google Sheets &amp; Drive</span><span>Work queues, logs, and deliverables</span></div>
+    <div class="r rv"><span>Vision &amp; image generation</span><span>Photo analysis · gpt-image-2 · Editing</span></div>
+    <div class="r rv"><span>Technical SEO</span><span>JSON-LD, internal linking, and metafields</span></div>
+    <div class="r rv"><span>Cloudinary · Third-party APIs</span><span>Media, carrier tracking, and webhooks</span></div>
+  </div>
+</section>
+
+<!-- ══════════ À PROPOS ══════════ -->
+<section id="apropos" class="wrap" style="border-top:1px solid var(--rule)">
+  <div class="shead rv">
+    <h2>Who builds these workflows</h2>
+    <div class="idx">About</div>
+  </div>
+  <div class="about">
+    <div class="rv">
+      <p class="big">I run an online store and work in real estate. I got started by automating my own operations.</p>
+    </div>
+    <div class="rv">
+      <p>I’m Ryan Charles, based in Martinique. I’ve been selling a product online for several years and also work as an independent real estate agent. Both jobs gave me firsthand experience with the problems I automate today: repetitive emails, a blog that’s hard to keep up with, and a social page that goes quiet whenever work gets busy.</p>
+      <p>The first two agents here run in my own store. I built them, broke them, and rebuilt them, so I know exactly where they can run into trouble. The other two run for clients on my n8n instance.</p>
+      <p>I deliver a working workflow, an execution log you can read, and a written list of actions the agent is never allowed to take.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact">
+  <div class="wrap contactGrid">
+   <div>
+    <div class="eyebrow rv">Available for new projects</div>
+    <h2 class="rv" style="margin-top:20px">What takes up the most time in your week?</h2>
+    <p class="sub rv">Whatever your industry or tools, a repetitive task with a written process and a regular schedule is a good candidate for automation. In a 20-minute call, we can see if it’s feasible and worth doing. I’ll tell you if it isn’t.</p>
+    <div class="links rv">
+      <button class="btn solid" type="button" data-rappel data-umami-event="contact-ouverture" data-umami-event-emplacement="contact">Request a callback</button>
+      <a class="btn" href="mailto:ryan.charles1@hotmail.com" data-umami-event="contact-email">Send me an email</a>
+    </div>
+   </div>
+   <aside class="panel rv">
+     <div class="phead">What I can help with</div>
+     <div class="pr"><span class="a">Customer support automation</span><span class="b">Email · Orders</span></div>
+     <div class="pr"><span class="a">Ongoing content &amp; SEO</span><span class="b">Blog · Product pages</span></div>
+     <div class="pr"><span class="a">Social media publishing</span><span class="b">Facebook · Instagram</span></div>
+     <div class="pr"><span class="a">Lead qualification and follow-up</span><span class="b">Real estate</span></div>
+     <div class="pr"><span class="a">Tool integrations</span><span class="b">APIs · CRM · Sheets</span></div>
+     <button class="pr trig" type="button" data-rappel data-umami-event="contact-ouverture" data-umami-event-emplacement="services"><span class="a">Something else? Tell me about it</span><span class="b">Most common</span></button>
+     <div class="pfoot">These examples come from real projects. If a task keeps coming up in your business, chances are it can be automated, whatever your industry or tools.</div>
+   </aside>
+  </div>
+</section>
+</main>
+
+
+<!-- ══════════ FORMULAIRE DE RAPPEL ══════════ -->
+<dialog id="rappel" aria-labelledby="rappelTitre">
+  <div class="dlgIn">
+    <button class="dlgX" type="button" data-close aria-label="Close">&times;</button>
+    <div class="eyebrow">Get in touch</div>
+    <h3 id="rappelTitre">How can I reach you?</h3>
+    <p class="dlgLede">I’ll get back to you within 48 hours to understand what’s taking up your time. We’ll look at whether it can be automated and whether it’s worth doing.</p>
+
+    <form class="dlgForm" action="https://formsubmit.co/ryan.charles1@hotmail.com" method="POST">
+      <input type="hidden" name="_subject" value="ryania.fr — callback request">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://ryania.fr/en/thanks.html">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="fRow">
+        <label>First name<input type="text" name="First name" required autocomplete="given-name"></label>
+        <label>Last name<input type="text" name="Last name" required autocomplete="family-name"></label>
+      </div>
+      <div class="fRow">
+        <label>Email<input type="email" name="Email" required autocomplete="email" inputmode="email"></label>
+        <label>Phone<input type="tel" name="Phone" required autocomplete="tel" inputmode="tel"></label>
+      </div>
+      <label class="full">What’s taking up your time? <span>Optional</span>
+        <textarea name="Message" rows="3" placeholder="For example, I reply to about 30 order tracking emails every week."></textarea>
+      </label>
+
+      <button class="btn solid full" type="submit">Send my details</button>
+      <p class="dlgNote">I’ll use your contact details only to get in touch. There’s no mailing list or automated follow-up.</p>
+    </form>
+  </div>
+</dialog>
+
+<a id="totop" href="#top" aria-label="Revenir en haut">↑ Back to top</a>
+
+<footer>
+  <div class="in">
+    <span>© <span id="yr"></span> Ryan Charles · Martinique</span>
+    <span>AI agents &amp; n8n automation</span>
+    <button class="analytics-settings" id="analytics-settings" type="button" aria-controls="analytics-choice" hidden>Analytics preferences</button>
+  </div>
+</footer>
+
+<aside class="analytics-choice" id="analytics-choice" aria-labelledby="analytics-title" hidden>
+  <h2 id="analytics-title">Audience analytics</h2>
+  <p>With your permission, Umami measures visits, estimated visitor countries, video plays, and contact clicks. You can change your preference at the bottom of the page.</p>
+  <div class="analytics-actions">
+    <button type="button" data-analytics-choice="refused">Decline</button>
+    <button type="button" data-analytics-choice="accepted">Accept</button>
+  </div>
+</aside>
+
+<script src="/assets/analytics.js?v=1" defer data-website-id="4e69f2d7-c2eb-4bb7-ada2-63e45bddf8bc"></script>
+<script src="/assets/app.js?v=6"></script>
+<script src="/assets/qg-widget.js?v=2" defer></script>
+</body>
+</html>

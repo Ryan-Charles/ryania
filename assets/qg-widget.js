@@ -2,23 +2,34 @@
    Données : data/agents.json (réécrit chaque jour par le workflow n8n « QG - API agents ») */
 (function () {
   "use strict";
-  var DATA_URL = "data/agents.json";
+  var DATA_URL = "/data/agents.json";
   var root = document.getElementById("qgAgents");
   if (!root) return;
+  var english = document.documentElement.lang === "en";
+  var relativeTime = new Intl.RelativeTimeFormat("en", { style: "short" });
+  var roles = {
+    "Service client": "Customer support",
+    "Recherche commandes": "Order lookup",
+    "Éditorial SEO": "SEO content",
+    "Posts LinkedIn": "LinkedIn posts",
+    "Carrousels Instagram": "Instagram carousels",
+    "Préparation Instagram": "Instagram content prep",
+    "Publication Facebook": "Facebook publishing"
+  };
 
   /* zones : couleurs tirées de la palette du site, une par activité */
   var ZONES = [
     { id: "acose",      label: "Acose · e-commerce",     color: "#146B52", rect: [0.5, 0.5, 10.5, 6.6] },
-    { id: "ryania",     label: "Ryania · contenu",       color: "#1B36C4", rect: [11.5, 0.5, 21.5, 6.6] },
-    { id: "immobilier", label: "Immobilier · Martinique", color: "#B8452A", rect: [0.5, 7.6, 10.5, 13.7] },
-    { id: "btp",        label: "BTP · Guyane",            color: "#8A5A00", rect: [11.5, 7.6, 21.5, 13.7] }
+    { id: "ryania",     label: english ? "Ryania · content" : "Ryania · contenu",       color: "#1B36C4", rect: [11.5, 0.5, 21.5, 6.6] },
+    { id: "immobilier", label: english ? "Real estate · Martinique" : "Immobilier · Martinique", color: "#B8452A", rect: [0.5, 7.6, 10.5, 13.7] },
+    { id: "btp",        label: english ? "Civil works · Guiana" : "BTP · Guyane",            color: "#8A5A00", rect: [11.5, 7.6, 21.5, 13.7] }
   ];
   var STAT = {
-    actif:  { t: "En service",  c: "#146B52" },
-    veille: { t: "En veille",   c: "#575D57" },
-    pause:  { t: "En pause",    c: "#868C85" },
-    erreur: { t: "Incident",    c: "#B8452A" },
-    absent: { t: "Hors ligne",  c: "#868C85" }
+    actif:  { t: english ? "Active" : "En service",  c: "#146B52" },
+    veille: { t: english ? "Standby" : "En veille",   c: "#575D57" },
+    pause:  { t: english ? "Paused" : "En pause",    c: "#868C85" },
+    erreur: { t: english ? "Issue" : "Incident",    c: "#B8452A" },
+    absent: { t: english ? "Offline" : "Hors ligne",  c: "#868C85" }
   };
   var W = 22, D = 14.2, T = 8; // demi-tuile
   var OX = (D + 1) * T + 6, OY = 30;
@@ -26,9 +37,11 @@
   var OUT = "#141715";
 
   root.innerHTML =
-    '<div class="qgHead"><span class="qgDot"></span><span>Instance n8n · en direct</span><span class="qgMaj" id="qgMaj"></span></div>' +
-    '<div class="qgStage" id="qgStage"><canvas id="qgCv" aria-label="Open space des agents n8n de Ryan Charles"></canvas><div id="qgPlates"></div><div class="qgTip" id="qgTip" hidden></div></div>' +
-    '<div class="qgFoot" id="qgFoot"><span><i style="background:#146B52"></i>en service</span><span><i style="background:#C2C6BD"></i>en veille</span><span>zz en pause</span><span class="qgSum" id="qgSum"></span></div>';
+    '<div class="qgHead"><span class="qgDot"></span><span>' + (english ? "n8n instance · Live status" : "Instance n8n · en direct") + '</span><span class="qgMaj" id="qgMaj"></span></div>' +
+    '<div class="qgStage" id="qgStage"><canvas id="qgCv" aria-label="' + (english ? "Ryan Charles’s n8n agent workspace" : "Open space des agents n8n de Ryan Charles") + '"></canvas><div id="qgPlates"></div><div class="qgTip" id="qgTip" hidden></div></div>' +
+    '<div class="qgFoot" id="qgFoot"><span><i style="background:#146B52"></i>' + (english ? "active" : "en service") +
+    '</span><span><i style="background:#C2C6BD"></i>' + (english ? "standby" : "en veille") +
+    '</span><span>' + (english ? "zz paused" : "zz en pause") + '</span><span class="qgSum" id="qgSum"></span></div>';
   var stage = root.querySelector("#qgStage"), cv = root.querySelector("#qgCv"), ctx = cv.getContext("2d");
   var tip = root.querySelector("#qgTip"), k = 1, tick = 0, hits = [], agents = [], maj = null, sel = null;
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -180,11 +193,15 @@
   }
 
   function rel(s) {
-    if (!s) return "aucune exécution récente";
+    if (!s) return english ? "no recent runs" : "aucune exécution récente";
     var d = (Date.now() - Date.parse(s)) / 1000;
-    if (d < 3600) return "il y a " + Math.max(1, Math.round(d / 60)) + " min";
-    if (d < 86400) return "il y a " + Math.round(d / 3600) + " h";
-    var j = Math.round(d / 86400); return "il y a " + j + " jour" + (j > 1 ? "s" : "");
+    var minutes = Math.max(1, Math.round(d / 60));
+    var hours = Math.round(d / 3600);
+    var days = Math.round(d / 86400);
+
+    if (d < 3600) return english ? relativeTime.format(-minutes, "minute") : "il y a " + minutes + " min";
+    if (d < 86400) return english ? relativeTime.format(-hours, "hour") : "il y a " + hours + " h";
+    return english ? relativeTime.format(-days, "day") : "il y a " + days + " jour" + (days > 1 ? "s" : "");
   }
   function pick(e) {
     var b = cv.getBoundingClientRect(), x = (e.clientX - b.left) / b.width * CW, y = (e.clientY - b.top) / b.height * CH;
@@ -194,7 +211,9 @@
   function show(h) {
     if (!h) { tip.hidden = true; sel = null; draw(); return; }
     sel = h.a; var s = STAT[h.a.statut] || STAT.veille;
-    tip.innerHTML = '<b>' + esc(h.a.nom) + '</b> · ' + esc(h.a.role) + '<br><span style="color:' + s.c + '">● ' + s.t + '</span> · ' + esc(h.a.dernier_run ? "dernier passage " + rel(h.a.dernier_run) : rel(null));
+    var role = english ? roles[h.a.role] || h.a.role : h.a.role;
+    var lastRun = h.a.dernier_run ? (english ? "last run " : "dernier passage ") + rel(h.a.dernier_run) : rel(null);
+    tip.innerHTML = '<b>' + esc(h.a.nom) + '</b> · ' + esc(role) + '<br><span style="color:' + s.c + '">● ' + s.t + '</span> · ' + esc(lastRun);
     var b = cv.getBoundingClientRect(), sb = stage.getBoundingClientRect();
     tip.style.left = (b.left - sb.left + h.sx / CW * b.width) + "px"; tip.style.top = (b.top - sb.top + (h.F - 33) / CH * b.height) + "px";
     tip.hidden = false; draw();
@@ -207,14 +226,15 @@
   function summary() {
     var on = agents.filter(function (a) { return a.statut === "actif"; }).length;
     var runs = agents.reduce(function (n, a) { return n + (a.runs_7j || 0); }, 0);
-    root.querySelector("#qgSum").textContent = agents.length ? (on + " en service · " + runs + " exécutions sur 7 j") : "";
-    root.querySelector("#qgMaj").textContent = maj ? "maj " + rel(maj) : "";
+    var totals = english ? on + " active · " + runs + " runs in 7 days" : on + " en service · " + runs + " exécutions sur 7 j";
+    root.querySelector("#qgSum").textContent = agents.length ? totals : "";
+    root.querySelector("#qgMaj").textContent = maj ? (english ? "Updated " : "maj ") + rel(maj) : "";
   }
   function load() {
     fetch(DATA_URL + "?t=" + Math.floor(Date.now() / 300000), { cache: "no-cache" })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (j) { agents = Array.isArray(j.agents) ? j.agents : []; maj = j.maj || null; summary(); draw(); })
-      .catch(function () { root.querySelector("#qgMaj").textContent = "statut indisponible"; });
+      .catch(function () { root.querySelector("#qgMaj").textContent = english ? "Status unavailable" : "statut indisponible"; });
   }
 
   plates(); layout(); load();

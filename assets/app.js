@@ -18,6 +18,12 @@
   })();
 
   /* ── journal d'exécution : lignes réelles de l'instance n8n ─────────── */
+  var english = document.documentElement.lang === 'en';
+  var logDate = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  var logAgents = {
+    'Acose · service client': 'Acose · Customer support',
+    'Acose · éditorial SEO': 'Acose · SEO content'
+  };
   var LOG = [
     ['01/09  18:11:19', 'Acose · service client', '13,2 s'],
     ['01/09  10:20:19', 'Acose · service client', '9,1 s'],
@@ -35,8 +41,15 @@
   var tk = document.getElementById('tk');
   if (tk) {
     var row = LOG.map(function (r) {
-      return '<div class="tk"><span>' + r[0] + '</span><span class="who">' + r[1] +
-        '</span><span class="ok">succès</span><span>' + r[2] + '</span></div>';
+      var stamp = r[0], agent = r[1], duration = r[2];
+      if (english) {
+        var parts = stamp.split(/\D+/).map(Number);
+        stamp = logDate.format(new Date(Date.UTC(2000, parts[1] - 1, parts[0]))) + stamp.slice(5);
+        agent = logAgents[agent] || agent;
+        duration = duration.replace(',', '.').replace(/(min \d+)$/, '$1 s');
+      }
+      return '<div class="tk"><span>' + stamp + '</span><span class="who">' + agent +
+        '</span><span class="ok">' + (english ? 'Success' : 'succès') + '</span><span>' + duration + '</span></div>';
     }).join('');
     tk.innerHTML = '<div class="row">' + row + '</div><div class="row">' + row + '</div>';
   }
@@ -91,7 +104,7 @@
         v.preload = 'auto';
         v.setAttribute('controlslist', 'nodownload');
 
-        var video = p.dataset.src;
+        var video = p.dataset.src?.replace(/^\//, '');
         v.addEventListener('playing', function () {
           window.umami?.track('video-lecture', { video: video });
         }, { once: true });
@@ -134,7 +147,7 @@
       b.addEventListener('click', function (e) {
         e.preventDefault();
         if (dlg.showModal) { dlg.showModal(); } else { dlg.setAttribute('open', ''); }
-        var f = dlg.querySelector('input[name="Prénom"]');
+        var f = dlg.querySelector('input[autocomplete="given-name"]');
         if (f) setTimeout(function () { f.focus(); }, 60);
       });
     });
