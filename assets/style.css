@@ -389,3 +389,18 @@ button.btn{cursor:pointer;font-family:"JetBrains Mono",monospace}
 .analytics-actions{display:flex;gap:8px;flex-wrap:wrap}
 .analytics-actions button{padding:8px 14px;border:1px solid var(--signal);border-radius:4px;
   background:transparent;color:var(--signal);font:inherit;font-size:14px;cursor:pointer}
+
+/* Mentions légales */
+.footer-legal{color:var(--muted);text-underline-offset:.2em}
+.footer-legal:hover,.footer-legal:focus-visible{color:var(--signal)}
+.legal-content{padding-block:clamp(32px,6vw,80px)}
+.legal-content h1{font-size:clamp(40px,6vw,72px);line-height:1.08}
+.legal-content section{max-width:64ch;margin-top:26px;padding-top:22px;border-top:1px solid var(--rule)}
+.legal-content h2{font-size:clamp(25px,4vw,32px);line-height:1.2;margin-bottom:8px}
+.legal-content dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px 20px;margin-top:12px}
+.legal-content dt{color:var(--muted)}
+.legal-content a{color:var(--signal);overflow-wrap:anywhere;text-underline-offset:.2em}
+@media(max-width:560px){
+  .legal-content dl{grid-template-columns:minmax(0,1fr);gap:2px}
+  .legal-content dd:not(:last-child){margin-bottom:8px}
+}
